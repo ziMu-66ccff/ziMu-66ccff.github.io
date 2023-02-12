@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://github.com/ziMu-66ccff/ziMu-66ccff.github.io.git</id>
+    <title>ziMu Space</title>
+    <subtitle>25届前端小菜鸡子木</subtitle>
+    <icon>https://github.com/ziMu-66ccff/ziMu-66ccff.github.io.git/images/favicon.ico</icon>
+    <link href="https://github.com/ziMu-66ccff/ziMu-66ccff.github.io.git" />
+    <author>
+      <name>ziMu</name>
+    </author>
+    <updated>2023-02-11T05:49:30.000Z</updated>
+    <category term="前端" />
+    <category term=" Vue" />
+    <entry>
+        <id>https://github.com/ziMu-66ccff/ziMu-66ccff.github.io.git/mySelf/</id>
+        <title>mySelf</title>
+        <link rel="alternate" href="https://github.com/ziMu-66ccff/ziMu-66ccff.github.io.git/mySelf/"/>
+        <content type="html">&lt;p&gt;一只前端小白&lt;/p&gt;
+</content>
+        <category term="随笔" scheme="https://github.com/ziMu-66ccff/ziMu-66ccff.github.io.git/categories/life/" />
+        <category term="自我" scheme="https://github.com/ziMu-66ccff/ziMu-66ccff.github.io.git/tags/%E8%87%AA%E6%88%91/" />
+        <updated>2023-02-11T05:49:30.000Z</updated>
+    </entry>
+</feed>

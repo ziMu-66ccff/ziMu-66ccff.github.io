@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>ziMu Space</title>
+        <subtitle>25届前端小菜鸡子木</subtitle>
+        <icon>https://github.com/ziMu-66ccff/ziMu-66ccff.github.io.git/images/favicon.ico</icon>
+        <link>https://github.com/ziMu-66ccff/ziMu-66ccff.github.io.git</link>
+        <author>
+          <name>ziMu</name>
+        </author>
+        <description>干净澄澈，真诚自然</description>
+        <language>zh-CN</language>
+        <pubDate>Sat, 11 Feb 2023 13:49:30 +0800</pubDate>
+        <lastBuildDate>Sat, 11 Feb 2023 13:49:30 +0800</lastBuildDate>
+        <category term="前端" />
+        <category term=" Vue" />
+        <item>
+            <guid isPermalink="true">https://github.com/ziMu-66ccff/ziMu-66ccff.github.io.git/mySelf/</guid>
+            <title>mySelf</title>
+            <link>https://github.com/ziMu-66ccff/ziMu-66ccff.github.io.git/mySelf/</link>
+            <category term="随笔" scheme="https://github.com/ziMu-66ccff/ziMu-66ccff.github.io.git/categories/life/" />
+            <category term="自我" scheme="https://github.com/ziMu-66ccff/ziMu-66ccff.github.io.git/tags/%E8%87%AA%E6%88%91/" />
+            <pubDate>Sat, 11 Feb 2023 13:49:30 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;一只前端小白&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

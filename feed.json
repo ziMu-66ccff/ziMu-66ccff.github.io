@@ -1,0 +1,21 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "ziMu Space",
+    "subtitle": "25届前端小菜鸡子木",
+    "icon": "https://github.com/ziMu-66ccff/ziMu-66ccff.github.io.git/images/favicon.ico",
+    "description": "干净澄澈，真诚自然",
+    "home_page_url": "https://github.com/ziMu-66ccff/ziMu-66ccff.github.io.git",
+    "items": [
+        {
+            "id": "https://github.com/ziMu-66ccff/ziMu-66ccff.github.io.git/mySelf/",
+            "url": "https://github.com/ziMu-66ccff/ziMu-66ccff.github.io.git/mySelf/",
+            "title": "mySelf",
+            "date_published": "2023-02-11T05:49:30.000Z",
+            "content_html": "<p>一只前端小白</p>\n",
+            "tags": [
+                "随笔",
+                "自我"
+            ]
+        }
+    ]
+}

@@ -146,7 +146,7 @@
 &lt;li&gt;&lt;em&gt;收集副作用&lt;/em&gt;
 &lt;ul&gt;
 &lt;li&gt;调用 &lt;code&gt;track&lt;/code&gt;  方法来收集&lt;strong&gt;副作用函数&lt;/strong&gt;，将其收集到 &lt;code&gt;target&lt;/code&gt;  对应的 &lt;code&gt;key&lt;/code&gt;  的对应的 &lt;code&gt;Set&lt;/code&gt;  里面，等待 &lt;code&gt;setter&lt;/code&gt;  被触发，并修改 &lt;code&gt;target[key]&lt;/code&gt;  的时候调用 &lt;code&gt;trigger&lt;/code&gt;  来将这个 &lt;code&gt;Set&lt;/code&gt;  里面存储的&lt;strong&gt;副作用函数&lt;/strong&gt;一一触发.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;ps&lt;/strong&gt;: &lt;em&gt;&lt;a href=&#34;&#34;&gt;(track 方法的讲解请点击这里奥)&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ps&lt;/strong&gt;: &lt;em&gt;&lt;a href=&#34;https://zimu-66ccff.github.io/reactivity-effect/&#34;&gt;(track 方法的讲解请点击这里奥)&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;em&gt;返回 &lt;code&gt;target[key]&lt;/code&gt;  的值，做深度响应式处理&lt;/em&gt;
@@ -168,7 +168,7 @@
 &lt;li&gt;&lt;em&gt;判断是否需要调用对应的 &lt;code&gt;key&lt;/code&gt;  对应的 &lt;code&gt;Set&lt;/code&gt;  存储的副作用函数&lt;/em&gt;
 &lt;ul&gt;
 &lt;li&gt;利用 &lt;code&gt;hasChanged()&lt;/code&gt;  判断新旧值是否发生了改变，如果没有改变则不进行接下来的处理。如果发生了改变，则调用 &lt;code&gt;trigger&lt;/code&gt;  方法，来调用对应的 &lt;code&gt;key&lt;/code&gt;  对应的 &lt;code&gt;Set&lt;/code&gt;  存储的副作用函数&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;ps&lt;/strong&gt;: &lt;em&gt;&lt;a href=&#34;&#34;&gt;trigger 方法的讲解请点击这里奥&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ps&lt;/strong&gt;: &lt;em&gt;&lt;a href=&#34;https://zimu-66ccff.github.io/reactivity-effect/&#34;&gt;trigger 方法的讲解请点击这里奥&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;em&gt;判断 &lt;code&gt;target&lt;/code&gt;  是否为 &lt;code&gt;Array&lt;/code&gt; , 并且数组的长度是否发生了改变&lt;/em&gt;

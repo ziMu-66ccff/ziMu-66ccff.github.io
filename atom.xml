@@ -8,9 +8,138 @@
     <author>
       <name>ziMu</name>
     </author>
-    <updated>2023-02-16T15:04:30.000Z</updated>
+    <updated>2023-02-17T08:52:37.000Z</updated>
     <category term="前端" />
     <category term=" Vue" />
+    <entry>
+        <id>https://zimu-66ccff.github.io/lazyLoading/</id>
+        <title>图片懒加载</title>
+        <link rel="alternate" href="https://zimu-66ccff.github.io/lazyLoading/"/>
+        <content type="html">&lt;h1 id=&#34;实现图片懒加载&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#实现图片懒加载&#34;&gt;#&lt;/a&gt; 实现图片懒加载&lt;/h1&gt;
+&lt;h2 id=&#34;传统的不够优雅的实现方式&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#传统的不够优雅的实现方式&#34;&gt;#&lt;/a&gt; 传统的不够优雅的实现方式&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;完整代码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight javascript&#34;&gt;&lt;figcaption data-lang=&#34;javascript&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; imgs &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; document&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;querySelectorAll&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;img&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;window&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;addEventListener&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;scroll&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&gt;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  imgs&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;forEach&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;img&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&gt;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;img&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;getBoundingClientRect&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;top &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt; window&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;innerHeight&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; dataSrc &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; img&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;getAttribute&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;data-src&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      img&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;setAttribute&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;src&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; dataSrc&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;事件被触发&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;ul&gt;
+&lt;li&gt;基本原理&lt;br /&gt;
+监听 &lt;code&gt;scroll&lt;/code&gt;  事件， &lt;code&gt;scroll&lt;/code&gt;  事件一旦被触发，就在 &lt;code&gt;callback&lt;/code&gt;  里面通过 &lt;code&gt;xxx.getBoundingClientRect().top&lt;/code&gt;  拿到元素距离可视区顶部的距离，并通过 &lt;code&gt;window.innerHeight&lt;/code&gt;  取得可视区的高度，将两个高度作比较，一旦前者小于后者，则意味着图片进入了可视区，就将自定义属性 &lt;code&gt;data-src&lt;/code&gt;  存储的图片的 &lt;code&gt;url&lt;/code&gt;  赋值给 &lt;code&gt;src&lt;/code&gt;  属性，加载图片。&lt;/li&gt;
+&lt;li&gt;带来的问题&lt;br /&gt;
+ &lt;code&gt;scroll&lt;/code&gt;  事件会被触发 n 多次，很容易造成卡顿，影响用户体验。&lt;/li&gt;
+&lt;li&gt;解决方案&lt;br /&gt;
+利用&lt;strong&gt;节流&lt;/strong&gt;，但是这种解决方案并不优雅，而且也不能完完全全的解决问题。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;利用-intersectionoberver-api-优雅的实现懒加载&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#利用-intersectionoberver-api-优雅的实现懒加载&#34;&gt;#&lt;/a&gt; 利用 intersectionOberver API 优雅的实现懒加载&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;完整代码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight javascript&#34;&gt;&lt;figcaption data-lang=&#34;javascript&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; imgs &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; document&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;querySelectorAll&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;img&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; observer &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;IntersectionObserver&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;entries&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&gt;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  entries&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;forEach&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;entry&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&gt;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;entry&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;isIntersecting&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; img &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; entry&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;target&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      dataSrc &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; img&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;getAttribute&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;data-src&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      img&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;setAttribute&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;src&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; dataSrc&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      observer&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;unobserve&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;img&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;事件被触发&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;imgs&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;forEach&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;img&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&gt;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  observer&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;observe&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;img&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;intersectionObserver API 简单介绍&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;intersectionObserver&lt;/code&gt;  是一个构造函数，可以给其传递一个参数 &lt;code&gt;callback&lt;/code&gt; , 会返回一个观察者实列 &lt;code&gt;observer&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;调用实例身上的 &lt;code&gt;observe&lt;/code&gt;  方法，并给其传一个元素的引用，就可以开始观察这个元素。相对的，调用实列身上的 &lt;code&gt;unobserve&lt;/code&gt;  方法就可以取消观察这个元素。&lt;/li&gt;
+&lt;li&gt;当被观察的元素进入 or 离开可视区的时候， &lt;code&gt;callback&lt;/code&gt;  就会被触发。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;callback&lt;/code&gt;  的参数为一个数组，数组里面存储的是被观察的元素中进入 or 离开可视区的元素的一些信息。比如参数数组中的元素的 &lt;code&gt;isIntersecting&lt;/code&gt;  属性存储的就是该元素是进入可视区还是离开可视区，&lt;br /&gt;
+ &lt;code&gt;target&lt;/code&gt;  属性存储的则是元素的引用。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;利用 intersectionObserver API 实现懒加载的原理&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;document.querySelectorAll(img)&lt;/code&gt;  获取对所有 &lt;code&gt;img&lt;/code&gt;  标签的引用，存储进 &lt;code&gt;imgs&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;new 一个 intersectionObserver 实列  &lt;code&gt;observer&lt;/code&gt; ， 给其传递一个 &lt;code&gt;callback&lt;/code&gt;  作为参数， 在 &lt;code&gt;callback&lt;/code&gt;  中进行接下来的操作。&lt;/li&gt;
+&lt;li&gt;拿到 &lt;code&gt;callback&lt;/code&gt;  的参数 &lt;code&gt;entries&lt;/code&gt;  &lt;em&gt;（为一个保存了被观察的元素中进入 or 离开可视区的元素的信息的数组&lt;/em&gt;。遍历这个参数 &lt;code&gt;entries&lt;/code&gt; ， 取出参数中的元素 &lt;code&gt;entry&lt;/code&gt; 。&lt;/li&gt;
+&lt;li&gt;判断 &lt;code&gt;entry.isIntersecting&lt;/code&gt;  是否为 &lt;code&gt;true&lt;/code&gt; ， 为 &lt;code&gt;true&lt;/code&gt;  则说明是进入了可视区，则进行接下来的操作，为 &lt;code&gt;false&lt;/code&gt;  则说明是离开可视区，则啥都不做。&lt;/li&gt;
+&lt;li&gt;利用 &lt;code&gt;entry.target&lt;/code&gt;  取出进去可视区的元素，将其赋值给 &lt;code&gt;img&lt;/code&gt; ， 然后取出 &lt;code&gt;img&lt;/code&gt;  身上的 &lt;code&gt;data-src&lt;/code&gt;  属性存储的 &lt;code&gt;url&lt;/code&gt;  赋值给 &lt;code&gt;src&lt;/code&gt;  属性，实现懒加载，并且调用 &lt;code&gt;observer.unobserve&lt;/code&gt;  来取消对这个图片元素的观察（这样一旦元素被加载，就取消了对它的观察，就不会再触发 callback，避免不必要的性能消耗）&lt;/li&gt;
+&lt;li&gt;遍历 &lt;code&gt;imgs&lt;/code&gt;  调用 &lt;code&gt;observer.observe(img)&lt;/code&gt;  来观察所有的 &lt;code&gt;img&lt;/code&gt;  标签&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+        <category term="笔记" scheme="https://zimu-66ccff.github.io/categories/note/" />
+        <category term="前端" scheme="https://zimu-66ccff.github.io/categories/note/front-end/" />
+        <category term="性能优化" scheme="https://zimu-66ccff.github.io/categories/note/front-end/performanceOptimization/" />
+        <category term="前端" scheme="https://zimu-66ccff.github.io/tags/%E5%89%8D%E7%AB%AF/" />
+        <category term="性能优化" scheme="https://zimu-66ccff.github.io/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" />
+        <category term="懒加载" scheme="https://zimu-66ccff.github.io/tags/%E6%87%92%E5%8A%A0%E8%BD%BD/" />
+        <updated>2023-02-17T08:52:37.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://zimu-66ccff.github.io/realizeCDN/</id>
+        <title>理解CDN</title>
+        <link rel="alternate" href="https://zimu-66ccff.github.io/realizeCDN/"/>
+        <content type="html">&lt;h1 id=&#34;理解-cdn-及其原理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#理解-cdn-及其原理&#34;&gt;#&lt;/a&gt; 理解 CDN 及其原理&lt;/h1&gt;
+&lt;h2 id=&#34;cdn-是什么&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#cdn-是什么&#34;&gt;#&lt;/a&gt; CDN 是什么&lt;/h2&gt;
+&lt;p&gt;CDN (Content Delivery Network) 内容分发网络， 是一种靠互联网连接的电脑网络系统，它根据用户所在的区域，选择离用户最近的服务器来将相关文件发送给用户，以此提供更快速，更稳定的网络内容分发服务。&lt;/p&gt;
+&lt;h2 id=&#34;cdn-由什么组成&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#cdn-由什么组成&#34;&gt;#&lt;/a&gt; CDN 由什么组成&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;分发服务系统&lt;br /&gt;
+分发服务系统最基本的工作单位是 Cache 设备，cache 设备负责直接响应用户的请求，将缓存在本地的内容快速的提供给用户，并且负责与源站点进行同步，将更新的内容，本地没有的内容，缓存到本地&lt;/li&gt;
+&lt;li&gt;负载均衡系统， 主要负责对所有发起请求的用户进行一个访问调度，主要分为全局负载均衡系统和本地负载均衡系统。
+&lt;ul&gt;
+&lt;li&gt;全局负载均衡系统，主要根据发起请求的用户所在的区域，选择一个最靠近用户的 cache。&lt;/li&gt;
+&lt;li&gt;本地负载均衡系统，主要是负责节点内部的设备负载均衡。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;运营管理系统&lt;br /&gt;
+主要是负责业务层面与外界系统的交互。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;cdn-的作用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#cdn-的作用&#34;&gt;#&lt;/a&gt; CDN 的作用&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;性能方面
+&lt;ul&gt;
+&lt;li&gt;用户收到的内容来自最近的服务器，延迟更低，内容加载更快。&lt;/li&gt;
+&lt;li&gt;部分资源的请求分配给了 CDN，服务器的负载减小。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;安全方面， 可以有效的防止黑客攻击&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;dns-域名解析的过程&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#dns-域名解析的过程&#34;&gt;#&lt;/a&gt; DNS 域名解析的过程&lt;/h2&gt;
+&lt;p&gt;比如在浏览器输入 www.test.com 的解析过程如下&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;检查浏览器缓存&lt;/li&gt;
+&lt;li&gt;检查操作系统缓存，比如 hosts 文件&lt;/li&gt;
+&lt;li&gt;检查路由器缓存&lt;/li&gt;
+&lt;li&gt;如果以上都没有找到缓存，则会向网络服务商的 LDNS 服务器查询&lt;/li&gt;
+&lt;li&gt;如果 LDNS 服务器没有查询到，就会向根域名服务器进行查询&lt;/li&gt;
+&lt;li&gt;根服务器会返回一个顶级域名服务器，比如  &lt;code&gt;.com&lt;/code&gt; ,  &lt;code&gt;.org&lt;/code&gt;  的地址，本例是返回 &lt;code&gt;.com&lt;/code&gt;  的地址&lt;/li&gt;
+&lt;li&gt;接着向顶级域名服务器查询，顶级域名服务器会返回一个次级域名服务器的地址，本文中为 &lt;code&gt;.test&lt;/code&gt;  的地址&lt;/li&gt;
+&lt;li&gt;接着向次级域名服务器查询，次级域名服务器会返回通过域名查询到的目标 ip， 本文为 &lt;code&gt;www.test.com&lt;/code&gt;  的地址&lt;/li&gt;
+&lt;li&gt;Local DNS Server 会缓存结果，并返回给用户， 缓存在系统中&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;cdn-工作原理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#cdn-工作原理&#34;&gt;#&lt;/a&gt; CDN 工作原理&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;用户没有用 CDN 缓存资源时&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;浏览器会通过 DNS 域名解析（上面的 DNS 域名解析）, 得到域名对应的 ip 地址&lt;/li&gt;
+&lt;li&gt;浏览器会根据得到的 ip 地址，向域名的服务主机发送请求&lt;/li&gt;
+&lt;li&gt;服务器向浏览器响应数据。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;用户使用了 CDN 缓存资源时&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;浏览器的 DNS 域名解析会发现这个 url 对应的时 CDN 的 DNS 服务器，则会将域名解析权交给 CDN 专用的 DNS 服务器。&lt;/li&gt;
+&lt;li&gt;DNS 服务器会将 CDN 的全局负载均衡设备的 ip 返回给用户。&lt;/li&gt;
+&lt;li&gt;用户会通过 ip 向全局负载均衡设备发送请求&lt;/li&gt;
+&lt;li&gt;全局负载均衡设备会根据用户的 ip 地址，url，选择一台用户区域的区域负载均衡设备，让用户向这个设备发送请求&lt;/li&gt;
+&lt;li&gt;区域负载均衡设备会选择一个适合的缓存服务器来提供服务，将这个服务器的 ip 地址返回给全局均衡设备。&lt;/li&gt;
+&lt;li&gt;全局均衡设备会将这个 ip 返回这个用户&lt;/li&gt;
+&lt;li&gt;用户会通过这个 ip 地址来向缓存服务器发起请求&lt;/li&gt;
+&lt;li&gt;缓存服务器响应用户的请求，将内容发送至用户终端。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.328888.xyz/2023/02/17/pcIMz.png&#34; alt=&#34;CDN&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;如果缓存服务器没有用户想要的内容，则会向它的上一级缓存服务器请求内容，直到获取到想要的内容，如果还是没有，则会回到自己的服务器去请求内容。&lt;/p&gt;
+</content>
+        <category term="笔记" scheme="https://zimu-66ccff.github.io/categories/note/" />
+        <category term="前端" scheme="https://zimu-66ccff.github.io/categories/note/front-end/" />
+        <category term="性能优化" scheme="https://zimu-66ccff.github.io/categories/note/front-end/performanceOptimization/" />
+        <category term="前端" scheme="https://zimu-66ccff.github.io/tags/%E5%89%8D%E7%AB%AF/" />
+        <category term="性能优化" scheme="https://zimu-66ccff.github.io/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" />
+        <category term="CDN" scheme="https://zimu-66ccff.github.io/tags/CDN/" />
+        <updated>2023-02-17T06:15:34.000Z</updated>
+    </entry>
     <entry>
         <id>https://zimu-66ccff.github.io/executionContext/</id>
         <title>JS执行上下文</title>
@@ -490,8 +619,8 @@
         <category term="前端" scheme="https://zimu-66ccff.github.io/categories/note/front-end/" />
         <category term="JavaScript" scheme="https://zimu-66ccff.github.io/categories/note/front-end/javaScript/" />
         <category term="前端" scheme="https://zimu-66ccff.github.io/tags/%E5%89%8D%E7%AB%AF/" />
-        <category term="浏览器" scheme="https://zimu-66ccff.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" />
         <category term="JS高级" scheme="https://zimu-66ccff.github.io/tags/JS%E9%AB%98%E7%BA%A7/" />
+        <category term="浏览器" scheme="https://zimu-66ccff.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" />
         <category term="事件循环" scheme="https://zimu-66ccff.github.io/tags/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/" />
         <updated>2023-02-16T02:20:17.000Z</updated>
     </entry>

@@ -8,9 +8,85 @@
     <author>
       <name>ziMu</name>
     </author>
-    <updated>2023-02-17T10:28:13.000Z</updated>
+    <updated>2023-02-17T15:25:31.000Z</updated>
     <category term="前端" />
     <category term=" Vue" />
+    <entry>
+        <id>https://zimu-66ccff.github.io/teachNote/</id>
+        <title>前端带人计划</title>
+        <link rel="alternate" href="https://zimu-66ccff.github.io/teachNote/"/>
+        <content type="html">&lt;h1 id=&#34;前端带新人计划&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#前端带新人计划&#34;&gt;#&lt;/a&gt; 前端带新人计划&lt;/h1&gt;
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;JS 基础部分 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMVk4NHkxTDdObj9wPTE1MSZhbXA7dmRfc291cmNlPWUyY2FmNTY5ZTFjMzI1MDdiMTRlMDRjMDdmY2ExNGY5&#34;&gt;此部分学习资源请点击这里&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;第一周&lt;/li&gt;
+&lt;li class=&#34;task-list-item&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_0&#34; disabled=&#34;true&#34; /&gt;&lt;label for=&#34;cbx_0&#34;&gt; 视频 1p - 62p (2.20 - 2.21 2.22 自由调整)&lt;/label&gt;&lt;/li&gt;
+&lt;li class=&#34;task-list-item&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_1&#34; disabled=&#34;true&#34; /&gt;&lt;label for=&#34;cbx_1&#34;&gt; 视频 63p - 115p (2.23 - 2.24 2.25 自由调整)&lt;/label&gt;&lt;/li&gt;
+&lt;li class=&#34;task-list-item&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_2&#34; disabled=&#34;true&#34; /&gt;&lt;label for=&#34;cbx_2&#34;&gt; 休息 （2.26）&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;第二周&lt;/li&gt;
+&lt;li class=&#34;task-list-item&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_3&#34; disabled=&#34;true&#34; /&gt;&lt;label for=&#34;cbx_3&#34;&gt; 视频 116p - 150p (2.27 - 2.28 3.1 自由调整)&lt;br /&gt;
+&lt;strong&gt; 恭喜你 JS 基础部分已经学完了，很厉害奥&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;JS DOM BOM 部分&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMWs0NDExdzdzVj9wPTExMiZhbXA7dmRfc291cmNlPWUyY2FmNTY5ZTFjMzI1MDdiMTRlMDRjMDdmY2ExNGY5&#34;&gt;此部分学习资料请点击这里&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li class=&#34;task-list-item&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_4&#34; disabled=&#34;true&#34; /&gt;&lt;label for=&#34;cbx_4&#34;&gt; 视频 1p - 55p (3.2 - 3.3 3.4 自由调整)&lt;/label&gt;&lt;/li&gt;
+&lt;li class=&#34;task-list-item&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_5&#34; disabled=&#34;true&#34; /&gt;&lt;label for=&#34;cbx_5&#34;&gt; 休息 (3.5)&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;第三周&lt;/li&gt;
+&lt;li class=&#34;task-list-item&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_6&#34; disabled=&#34;true&#34; /&gt;&lt;label for=&#34;cbx_6&#34;&gt; 视频 56p - 118p (3.6 - 3.7 3.8 自由调整)&lt;/label&gt;&lt;/li&gt;
+&lt;li class=&#34;task-list-item&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_7&#34; disabled=&#34;true&#34; /&gt;&lt;label for=&#34;cbx_7&#34;&gt; 视频 119p - 140p (3.9 - 3.10 3.11 自由调整)&lt;/label&gt;&lt;/li&gt;
+&lt;li class=&#34;task-list-item&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_8&#34; disabled=&#34;true&#34; /&gt;&lt;label for=&#34;cbx_8&#34;&gt; 休息 (3.12)&lt;br /&gt;
+&lt;strong&gt; 恭喜你 JS DOM BOM 部分已经学完了，真的巨厉害，巨努力&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;JS 高级部分 (此部分学习资源请联系我奥，此部分会遇到很多难以理解的地方，请及时找我)&lt;/p&gt;
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;第四周&lt;/li&gt;
+&lt;li class=&#34;task-list-item&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_9&#34; disabled=&#34;true&#34; /&gt;&lt;label for=&#34;cbx_9&#34;&gt; 01，02 文件夹里面的视频 (3.13 - 3.14 3.15 自由调整)&lt;/label&gt;&lt;/li&gt;
+&lt;li class=&#34;task-list-item&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_10&#34; disabled=&#34;true&#34; /&gt;&lt;label for=&#34;cbx_10&#34;&gt; 03, 04 文件夹里面的视频 (3.16 - 3.17 3.18 自由调整)&lt;/label&gt;&lt;/li&gt;
+&lt;li class=&#34;task-list-item&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_11&#34; disabled=&#34;true&#34; /&gt;&lt;label for=&#34;cbx_11&#34;&gt; 休息 (3.19)&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;第五周&lt;/li&gt;
+&lt;li class=&#34;task-list-item&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_12&#34; disabled=&#34;true&#34; /&gt;&lt;label for=&#34;cbx_12&#34;&gt; 05, 06 文件夹里面的视频 (3.20 - 3.21 3.22 自由调整)&lt;/label&gt;&lt;/li&gt;
+&lt;li class=&#34;task-list-item&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_13&#34; disabled=&#34;true&#34; /&gt;&lt;label for=&#34;cbx_13&#34;&gt; 07, 08 文件夹里面的视频 (3.23 - 3.24 3.25 自由调整)&lt;/label&gt;&lt;/li&gt;
+&lt;li class=&#34;task-list-item&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_14&#34; disabled=&#34;true&#34; /&gt;&lt;label for=&#34;cbx_14&#34;&gt; 休息 (3.26)&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;第六周&lt;/li&gt;
+&lt;li class=&#34;task-list-item&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_15&#34; disabled=&#34;true&#34; /&gt;&lt;label for=&#34;cbx_15&#34;&gt; 09, 10, 11 文件夹里面的内容 (3.27 - 3.28 3.29 自由调整)&lt;/label&gt;&lt;/li&gt;
+&lt;li class=&#34;task-list-item&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_16&#34; disabled=&#34;true&#34; /&gt;&lt;label for=&#34;cbx_16&#34;&gt; 12, 13, 14 文件夹里面的内容 (3.30 - 3.31 4.1 自由调整)&lt;/label&gt;&lt;/li&gt;
+&lt;li class=&#34;task-list-item&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_17&#34; disabled=&#34;true&#34; /&gt;&lt;label for=&#34;cbx_17&#34;&gt; 休息 (4.2)&lt;br /&gt;
+&lt;strong&gt; 恭喜你 JS 高级已经学完了，至此 js 基本上你已经可以说是熟悉 or 掌握了，欢迎加入前端大家庭&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;初识 node 和 npm&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMWEzNHkxNjdBWj9wPTIzJmFtcDt2ZF9zb3VyY2U9ZTJjYWY1NjllMWMzMjUwN2IxNGUwNGMwN2ZjYTE0Zjk=&#34;&gt; 此部分学习资源请点击这里&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;第七周&lt;/li&gt;
+&lt;li class=&#34;task-list-item&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_18&#34; disabled=&#34;true&#34; /&gt;&lt;label for=&#34;cbx_18&#34;&gt; 视频 1p - 31p (4.3 - 4.4 4.5 自由调整)&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;VUE 全家桶的学习 + 初识 TS (资源请联系本人)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li class=&#34;task-list-item&#34;&gt;
+&lt;p&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_19&#34; disabled=&#34;true&#34; /&gt;&lt;label for=&#34;cbx_19&#34;&gt; 学会 vue，vurRouter，Pina, TS 的基本使用（4.5 - 5.15）&lt;/label&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ps：后面会考虑细分，毕竟这是很大的一个模块。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;恭喜你，你已经是一个具备项目开发能力的前端了&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;Vue + TS 项目开发&lt;/li&gt;
+&lt;li class=&#34;task-list-item&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_20&#34; disabled=&#34;true&#34; /&gt;&lt;label for=&#34;cbx_20&#34;&gt; 开发一个 vue + ts 的项目 (5.16 - 6.1)&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;恭喜你，你已经完成了自己的第一个项目&lt;/strong&gt;&lt;/p&gt;
+</content>
+        <category term="带人" scheme="https://zimu-66ccff.github.io/categories/teach/" />
+        <category term="带人" scheme="https://zimu-66ccff.github.io/tags/%E5%B8%A6%E4%BA%BA/" />
+        <updated>2023-02-17T15:25:31.000Z</updated>
+    </entry>
     <entry>
         <id>https://zimu-66ccff.github.io/debounce-throttle/</id>
         <title>防抖和节流</title>

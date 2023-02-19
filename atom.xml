@@ -126,6 +126,41 @@
 &lt;h1 id=&#34;http-响应报文&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#http-响应报文&#34;&gt;#&lt;/a&gt; http 响应报文&lt;/h1&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://i.328888.xyz/2023/02/19/XkgD3.png&#34; alt=&#34;响应报文&#34; /&gt;&lt;/p&gt;
 &lt;h1 id=&#34;常见状态码&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#常见状态码&#34;&gt;#&lt;/a&gt; 常见状态码&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;1xx 请求正在处理&lt;/li&gt;
+&lt;li&gt;2xx 请求处理成功
+&lt;ul&gt;
+&lt;li&gt;200 请求已经被服务器正确处理&lt;/li&gt;
+&lt;li&gt;204 请求被正确处理，但是没有返回响应体&lt;/li&gt;
+&lt;li&gt;206 表示进行了范围请求&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;3xx 请求发送重定向
+&lt;ul&gt;
+&lt;li&gt;301 请求永久重定向&lt;/li&gt;
+&lt;li&gt;302 请求临时重定向&lt;/li&gt;
+&lt;li&gt;304 让服务器去请求缓存文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;4xx 客户端发生错误
+&lt;ul&gt;
+&lt;li&gt;400 请求体存在语法错误&lt;/li&gt;
+&lt;li&gt;401 请求没有权限&lt;/li&gt;
+&lt;li&gt;403 请求的资源被服务器拒绝&lt;/li&gt;
+&lt;li&gt;404 请求的资源不存在&lt;/li&gt;
+&lt;li&gt;405 服务器不支持这种请求方式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;5xx 服务器发生错误
+&lt;ul&gt;
+&lt;li&gt;500 服务器发送错误&lt;/li&gt;
+&lt;li&gt;501 服务器不支持请求所需要的某个功能&lt;/li&gt;
+&lt;li&gt;502 服务器从上层服务器得到了空的响应&lt;/li&gt;
+&lt;li&gt;503 服务器发送临时错误&lt;/li&gt;
+&lt;li&gt;504 服务器响应超时&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 </content>
         <category term="笔记" scheme="https://zimu-66ccff.github.io/categories/note/" />
         <category term="前端" scheme="https://zimu-66ccff.github.io/categories/note/front-end/" />

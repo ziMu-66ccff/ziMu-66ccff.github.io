@@ -8,9 +8,128 @@
     <author>
       <name>ziMu</name>
     </author>
-    <updated>2023-02-19T03:19:45.000Z</updated>
+    <updated>2023-02-19T15:15:13.000Z</updated>
     <category term="前端" />
     <category term=" Vue" />
+    <entry>
+        <id>https://zimu-66ccff.github.io/security/</id>
+        <title>浏览器安全</title>
+        <link rel="alternate" href="https://zimu-66ccff.github.io/security/"/>
+        <content type="html">&lt;h1 id=&#34;xss-攻击&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#xss-攻击&#34;&gt;#&lt;/a&gt; XSS 攻击&lt;/h1&gt;
+&lt;h3 id=&#34;概念&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概念&#34;&gt;#&lt;/a&gt; 概念&lt;/h3&gt;
+&lt;p&gt;XSS 指的是&lt;strong&gt;跨站脚本攻击&lt;/strong&gt;，是一种代码注入攻击，本质是网站没有对恶意脚本进行过滤，导致其和普通代码混在了一起，最终被浏览器执行。&lt;/p&gt;
+&lt;h3 id=&#34;可以进行的操作&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#可以进行的操作&#34;&gt;#&lt;/a&gt; 可以进行的操作&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;获取页面的数据，比如 DOM，cookie，localStorage，sessionStorage&lt;/li&gt;
+&lt;li&gt;DOS 攻击，向服务器发送大量的请求，占用服务器资源，导致用户无法访问服务器&lt;/li&gt;
+&lt;li&gt;破坏页面结构&lt;/li&gt;
+&lt;li&gt;流量劫持（将链接指向其他网站）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;xss-攻击类型&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#xss-攻击类型&#34;&gt;#&lt;/a&gt; XSS 攻击类型&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;存储型 XSS 攻击&lt;br /&gt;
+指的是恶意脚本会存储在服务器上，等到浏览器请求数据的时候，恶意脚本会返回，并执行。&lt;/li&gt;
+&lt;li&gt;反射型 XSS 攻击&lt;br /&gt;
+指的是诱导用户访问一个带有恶意代码的 url 后，服务器接收到数据后，把带有恶意代码的数据返回给浏览器，浏览器解析带有恶意脚本的数据，当作脚本执行，进行 XSS 攻击&lt;/li&gt;
+&lt;li&gt;DOM 型 XSS 攻击&lt;br /&gt;
+指的是直接通过操作 DOM 节点进行 XSS 攻击&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;如何防御-xss-攻击&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#如何防御-xss-攻击&#34;&gt;#&lt;/a&gt; 如何防御 XSS 攻击&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;前端程序员永远不要相信用户提交的数据，在进行拼凑 HTML 的时候，应该对字符串进行必要的转义，要考虑到拿来拼串的字符串可能带有恶意脚本。&lt;/li&gt;
+&lt;li&gt;使用 CSP，CSP 的本质是建立一个白名单，这个白名单可以告诉浏览器哪些外部资源可以加载和执行，避免恶意代码的注入攻击。&lt;/li&gt;
+&lt;li&gt;对敏感信息进行保护，比如对 cookie 使用 &lt;code&gt;http-only&lt;/code&gt; ，使得脚本无法获取，或者使用验证码，避免脚本伪装成用户。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;csrf-攻击&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#csrf-攻击&#34;&gt;#&lt;/a&gt; CSRF 攻击&lt;/h1&gt;
+&lt;h3 id=&#34;概念-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概念-2&#34;&gt;#&lt;/a&gt; 概念&lt;/h3&gt;
+&lt;p&gt;CSRF 攻击是一种跨站伪造请求攻击，攻击者诱导用户进入一个第三方网站，然后这个第三方网站就会向被攻击网站发送跨站请求，如果用户保持了登录状态，那么攻击者就会利用这个登录状态，冒充用户执行一些操作。&lt;br /&gt;
+其本质是利用 cookie 会在同源请求中携带发送给服务器，以此来实现用户的冒充。&lt;/p&gt;
+&lt;h3 id=&#34;常见的攻击类型&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#常见的攻击类型&#34;&gt;#&lt;/a&gt; 常见的攻击类型&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;GET 类型的 CSRF 攻击，比如在 img 标签里面构造一个请求，当用户打开这个网站的时候，就会发送请求。&lt;/li&gt;
+&lt;li&gt;POST 类型的 CSRF 攻击，比如构建一个表单，然后隐藏他，当用户进入页面的时候自动提交表单&lt;/li&gt;
+&lt;li&gt;链接类型的 CSRF 攻击，构造一个 a 标签，然后用户点击的时候触发攻击。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;怎么防止-csrf-攻击&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#怎么防止-csrf-攻击&#34;&gt;#&lt;/a&gt; 怎么防止 CSRF 攻击&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;同源检测&lt;br /&gt;
+服务器更具请求头中的 origin 和 referer 来判断请求是否来自允许访问的站点，但是 referer 可以仿造，并且会把搜索引擎的链接也给屏蔽了&lt;/li&gt;
+&lt;li&gt;利用 token 进行验证&lt;br /&gt;
+服务器向用户返回一个 token，然后用户每次请求的时候都要带 token，服务器再对这个 token 进行验证，缺点是给每个请求都加上 token 比较繁琐，并且如果请求经过负载均衡转移到了其他服务器，然后其他服务器的 session 中没有存储 token，就无法验证。&lt;/li&gt;
+&lt;li&gt;利用 cookie 进行双重验证&lt;br /&gt;
+用户在访问页面的时候，服务器向其域名添加一个 cookie，然后用户再次向服务器发送请求的时候，将这个 cookie 添加到 url 的参数中，服务器根据 cookie 中的数据和参数中的数据进行对比来验证。&lt;/li&gt;
+&lt;li&gt;在设置 cookie 属性的时候设置 Samesite，限制 cookie 不能被第三方使用。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;中间人攻击&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#中间人攻击&#34;&gt;#&lt;/a&gt; 中间人攻击&lt;/h1&gt;
+&lt;h3 id=&#34;概念-3&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概念-3&#34;&gt;#&lt;/a&gt; 概念&lt;/h3&gt;
+&lt;p&gt;中间人攻击是指攻击者分别与通信的两端建立联系，交换其所收到的数据，让通信的两端认为他们正在通过一个私密的链接直接与对方对话，攻击者可以拦截双非的对话，并插入新的内容。&lt;/p&gt;
+&lt;h3 id=&#34;攻击过程&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#攻击过程&#34;&gt;#&lt;/a&gt; 攻击过程&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;客户端发送请求到服务端，请求被中间人截获&lt;/li&gt;
+&lt;li&gt;服务端向客户端返回公钥&lt;/li&gt;
+&lt;li&gt;公钥被中间人截获，并生成一个伪造的公钥返回给客户端&lt;/li&gt;
+&lt;li&gt;客户端收到伪造的公钥后，用伪造的公钥生成加密 hash 值发给服务器。&lt;/li&gt;
+&lt;li&gt;中间人用自己的私钥解密获取真密钥，然后同时生成一个伪造的 hash 值发给服务器&lt;/li&gt;
+&lt;li&gt;服务器用私钥解密获取假密钥，然后加密数据返回给客户端。&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <category term="笔记" scheme="https://zimu-66ccff.github.io/categories/note/" />
+        <category term="前端" scheme="https://zimu-66ccff.github.io/categories/note/front-end/" />
+        <category term="浏览器原理" scheme="https://zimu-66ccff.github.io/categories/note/front-end/browser/" />
+        <category term="前端" scheme="https://zimu-66ccff.github.io/tags/%E5%89%8D%E7%AB%AF/" />
+        <category term="浏览器原理" scheme="https://zimu-66ccff.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8E%9F%E7%90%86/" />
+        <category term="浏览器安全" scheme="https://zimu-66ccff.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AE%89%E5%85%A8/" />
+        <updated>2023-02-19T15:15:13.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://zimu-66ccff.github.io/httpVersionDifference/</id>
+        <title>浅谈http协议各版本之间，http协议与https协议之间的区别</title>
+        <link rel="alternate" href="https://zimu-66ccff.github.io/httpVersionDifference/"/>
+        <content type="html">&lt;h1 id=&#34;http11-与-http10-的区别&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#http11-与-http10-的区别&#34;&gt;#&lt;/a&gt; http1.1 与 http1.0 的区别&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;连接方面&lt;br /&gt;
+ http1.0 不是持久连接，每次发送请求都需要建立一个连接；http1.1 是持久连接，多次请求服用一个 tcp 连接。&lt;/li&gt;
+&lt;li&gt;缓存方面&lt;br /&gt;
+ http1.0 的缓存主要是使用请求头中的 If-Modified-Sine,Expires 作为缓存判断的标准。http1.1 则增加了 Etag, if-None-match,if-Match 等更多选项来控制缓存策略&lt;/li&gt;
+&lt;li&gt;资源请求方面&lt;br /&gt;
+ http1.0 请求资源的时候，有时候只是需要请求一点东西，但是服务器会把整个对象返回，存在浪费带宽的现象，并且不支持断点续传。http1.1 则在请求同中增加了 range 选项，支持只请求资源的某个部分，返回 206 状态码&lt;/li&gt;
+&lt;li&gt;新增了 host 字段，来指定服务器的域名&lt;/li&gt;
+&lt;li&gt;新增了 PUT,DELETE,TRACE,OPTIONS 请求方法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;http20-与-http11-的区别&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#http20-与-http11-的区别&#34;&gt;#&lt;/a&gt; http2.0 与 http1.1 的区别&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;二进制协议&lt;br /&gt;
+ http1.1 里头信息必须是文本，数据体可以是文本可以是二进制。而 http2.0 则是个完全的二进制协议，头信息和数据体都必须是二进制，统称为 &#39; 帧&#39;，分为头信息帧和数据帧。&lt;/li&gt;
+&lt;li&gt;多路复用&lt;br /&gt;
+ http2.0 实现了多路复用，http2.0 依旧复用 tcp 连接，但是客户端和服务端都可以同时发送多个请求 or 响应，而且不用按照顺序一一发送，避免了 http 的队头阻塞。&lt;/li&gt;
+&lt;li&gt;数据流&lt;br /&gt;
+ http2.0 使用了数据流的概念，因为 http2.0 的数据包不是按照顺序发送的，多个连续的数据包可能来自不同的请求 or 响应，所以需要指定他们来自哪个请求，哪个响应。http2.0 将请求 or 响应对应的所有数据包&lt;br /&gt;
+称为一个数据流，每个数据流都有一个独一无二的编号，每个数据包发送的时候都必须带上数据流 ip，来指明它属于哪个数据流。&lt;/li&gt;
+&lt;li&gt;头信息压缩&lt;br /&gt;
+ http1.1 协议不带状态，每次请求都必须带上所有的信息，所以很多字段都是重复的，这会浪费带宽，也会影响速度&lt;/li&gt;
+&lt;li&gt;服务器推送&lt;br /&gt;
+ http2.0 允许服务器未经请求，主动的向客户端发送一些静态资源。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;https-和-http-的区别&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#https-和-http-的区别&#34;&gt;#&lt;/a&gt; https 和 http 的区别&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;https 协议需要 CA 证书，费用较高，而 http 协议不需要&lt;/li&gt;
+&lt;li&gt;http 协议是超文本传输协议，信息是明文传输的，https 是 ssl 加密传输协议，具有安全性&lt;/li&gt;
+&lt;li&gt;使用不同的传输方式，端口号也不同，http 协议是运行在 80 端口 ，https 协议是运行在 443 端口&lt;/li&gt;
+&lt;li&gt;http 协议很简单是无状态的，https 协议是用 ssl 协议和 http 协议构建的可加密传输，身份认证的网络协议，比 http 更安全。&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <category term="笔记" scheme="https://zimu-66ccff.github.io/categories/note/" />
+        <category term="前端" scheme="https://zimu-66ccff.github.io/categories/note/front-end/" />
+        <category term="计算机网络" scheme="https://zimu-66ccff.github.io/categories/note/front-end/computerNetwork/" />
+        <category term="前端" scheme="https://zimu-66ccff.github.io/tags/%E5%89%8D%E7%AB%AF/" />
+        <category term="计算机网络" scheme="https://zimu-66ccff.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" />
+        <category term="http1.0" scheme="https://zimu-66ccff.github.io/tags/http1-0/" />
+        <category term="http1.1" scheme="https://zimu-66ccff.github.io/tags/http1-1/" />
+        <category term="http2.0" scheme="https://zimu-66ccff.github.io/tags/http2-0/" />
+        <category term="http3.0" scheme="https://zimu-66ccff.github.io/tags/http3-0/" />
+        <category term="https" scheme="https://zimu-66ccff.github.io/tags/https/" />
+        <updated>2023-02-19T07:51:25.000Z</updated>
+    </entry>
     <entry>
         <id>https://zimu-66ccff.github.io/httpBase/</id>
         <title>http基本知识</title>

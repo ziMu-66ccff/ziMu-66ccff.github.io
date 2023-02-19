@@ -10,10 +10,133 @@
         </author>
         <description>干净澄澈，真诚自然</description>
         <language>zh-CN</language>
-        <pubDate>Sat, 18 Feb 2023 17:52:00 +0800</pubDate>
-        <lastBuildDate>Sat, 18 Feb 2023 17:52:00 +0800</lastBuildDate>
+        <pubDate>Sun, 19 Feb 2023 11:19:45 +0800</pubDate>
+        <lastBuildDate>Sun, 19 Feb 2023 11:19:45 +0800</lastBuildDate>
         <category term="前端" />
         <category term=" Vue" />
+        <item>
+            <guid isPermalink="true">https://zimu-66ccff.github.io/httpBase/</guid>
+            <title>http基本知识</title>
+            <link>https://zimu-66ccff.github.io/httpBase/</link>
+            <category term="笔记" scheme="https://zimu-66ccff.github.io/categories/note/" />
+            <category term="前端" scheme="https://zimu-66ccff.github.io/categories/note/front-end/" />
+            <category term="计算机网络" scheme="https://zimu-66ccff.github.io/categories/note/front-end/computerNetwork/" />
+            <category term="前端" scheme="https://zimu-66ccff.github.io/tags/%E5%89%8D%E7%AB%AF/" />
+            <category term="计算机网络" scheme="https://zimu-66ccff.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" />
+            <category term="http基础知识" scheme="https://zimu-66ccff.github.io/tags/http%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" />
+            <pubDate>Sun, 19 Feb 2023 11:19:45 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;常见的请求方法及其相关面试问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#常见的请求方法及其相关面试问题&#34;&gt;#&lt;/a&gt; 常见的请求方法及其相关面试问题&lt;/h1&gt;
+&lt;h3 id=&#34;请求方法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#请求方法&#34;&gt;#&lt;/a&gt; 请求方法&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;GET&lt;br /&gt;
+ 用来请求服务器的资源，是一个幂等请求，不会造成服务器数据的改变&lt;/li&gt;
+&lt;li&gt;POST&lt;br /&gt;
+ 用来向服务器提供实体，服务器会保存提供的实体数据，不是一个幂等请求，会对服务器存储的数据造成改变。&lt;/li&gt;
+&lt;li&gt;PUT&lt;br /&gt;
+ 用来提供数据，以更新服务器存储的数据。&lt;/li&gt;
+&lt;li&gt;DELETE&lt;br /&gt;
+ 用来删除服务器里存储的相关数据&lt;/li&gt;
+&lt;li&gt;HEAD&lt;br /&gt;
+ 和 GET 类似，只不过没有请求体&lt;/li&gt;
+&lt;li&gt;OPTIONS&lt;br /&gt;
+ 用来发起预请求，通常用于跨域问题&lt;/li&gt;
+&lt;li&gt;CONNECT&lt;br /&gt;
+ 要求在与代理服务器通信时建立一个隧道，用于 TCP 通信&lt;/li&gt;
+&lt;li&gt;TRACE&lt;br /&gt;
+ 通常用于测试&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;相关面试问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#相关面试问题&#34;&gt;#&lt;/a&gt; 相关面试问题&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;GET 请求和 POST 请求的区别
+&lt;ul&gt;
+&lt;li&gt;应用场景&lt;br /&gt;
+ GET 请求通常用来请求数据，是一个幂等请求，不会对服务器存储的数据做出改变。POST 请求通常用来提交数据，不是一个幂等请求，会对服务器存储的数据造成改变&lt;/li&gt;
+&lt;li&gt;发送的报文格式&lt;br /&gt;
+ GET 请求的请求体为空，POST 请求的请求体一般存储着要发给服务器的数据。&lt;/li&gt;
+&lt;li&gt;是否缓存&lt;br /&gt;
+因为 GET 请求通常时来向服务器请求资源，所以浏览器一般会对 GET 请求做缓存，但是很少对 POST 请求做缓存。&lt;/li&gt;
+&lt;li&gt;安全性&lt;br /&gt;
+ GET 请求可以在 url 中携带一些参数，但是这种方式对于 POST 而言时不安全的，因为 POST 的参数中可能会携带用户的星期，而 URL 会被浏览器缓存。&lt;/li&gt;
+&lt;li&gt;请求长度&lt;br /&gt;
+因为浏览器对 url 的长度做了限制，所以 GET 请求发送请求的参数的个数会受到影响&lt;/li&gt;
+&lt;li&gt;参数类型&lt;br /&gt;
+ POST 请求的参数支持更多类型&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;常见的-http-请求头和响应头&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#常见的-http-请求头和响应头&#34;&gt;#&lt;/a&gt; 常见的 HTTP 请求头和响应头&lt;/h1&gt;
+&lt;p&gt;请求头&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;本次请求的相关信息
+&lt;ul&gt;
+&lt;li&gt;Content-Type: 客户端发出去的请求体的类型&lt;/li&gt;
+&lt;li&gt;Host: 发出请求的所在页面的域名&lt;/li&gt;
+&lt;li&gt;Referer: 发送请求的所在页面的 url&lt;/li&gt;
+&lt;li&gt;origin：最初的请求是从哪里发起的，只会精确到端口号，更尊重隐私&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;希望收到的响应体的类型
+&lt;ul&gt;
+&lt;li&gt;Accept：浏览器支持的类型&lt;/li&gt;
+&lt;li&gt;Accept-Charset: 浏览器支持的字符集&lt;/li&gt;
+&lt;li&gt;Accept-Encoding: 浏览器支持的压缩编码&lt;/li&gt;
+&lt;li&gt;Accept-Language: 浏览器自持的语言&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;缓存相关
+&lt;ul&gt;
+&lt;li&gt;Cache-Contral: 是否开启缓存，开启协商缓存还是强缓存，no-store 不开启缓存，no-cache 开启强缓存。&lt;/li&gt;
+&lt;li&gt;Expires: 缓存到期时间&lt;/li&gt;
+&lt;li&gt;Max-age: 缓存保存多长时间&lt;/li&gt;
+&lt;li&gt;If-Modified-Since: 对标响应头的 Last-Modified, 用来匹配文件是否变动，只能精确到 1s 之内&lt;/li&gt;
+&lt;li&gt;If-None-Match: 对标响应头的 Etag，非常精确&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Cookie
+&lt;ul&gt;
+&lt;li&gt;可以携带相关信息，同源访问时会自动带上&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;用户信息
+&lt;ul&gt;
+&lt;li&gt;User-Agent: 用户客户端的一些必要信息&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;响应头&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;本次响应的相关信息
+&lt;ul&gt;
+&lt;li&gt;Content-Type: 同上&lt;/li&gt;
+&lt;li&gt;Server: 服务器的一些相关信息&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;同源策略
+&lt;ul&gt;
+&lt;li&gt;Access-Contral-Allow-Origin: 服务器允许请求的 Origin 头部&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;缓存相关
+&lt;ul&gt;
+&lt;li&gt;Cache-Contral: 同上&lt;/li&gt;
+&lt;li&gt;Expires: 同上&lt;/li&gt;
+&lt;li&gt;Max-age: 同上&lt;/li&gt;
+&lt;li&gt;Last-Modified: 请求资源最后修改的时间&lt;/li&gt;
+&lt;li&gt;Etag: 资源特定版本的标识符&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Cookie
+&lt;ul&gt;
+&lt;li&gt;Set-Cookie: 返回给客户端，用于设置 Cookie&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;http-请求报文&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#http-请求报文&#34;&gt;#&lt;/a&gt; http 请求报文&lt;/h1&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.328888.xyz/2023/02/19/XkBJv.png&#34; alt=&#34;请求报文&#34; /&gt;&lt;/p&gt;
+&lt;h1 id=&#34;http-响应报文&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#http-响应报文&#34;&gt;#&lt;/a&gt; http 响应报文&lt;/h1&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.328888.xyz/2023/02/19/XkgD3.png&#34; alt=&#34;响应报文&#34; /&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://zimu-66ccff.github.io/realizeWebpack/</guid>
             <title>理解webpack</title>

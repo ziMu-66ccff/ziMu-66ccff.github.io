@@ -501,7 +501,7 @@ Dllolugin 可以提前将指定的类库打包然后引入，这样可以减少�
 &lt;ul class=&#34;task-list&#34;&gt;
 &lt;li&gt;第一周&lt;/li&gt;
 &lt;li class=&#34;task-list-item&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_0&#34; checked=&#34;true&#34; disabled=&#34;true&#34; /&gt;&lt;label for=&#34;cbx_0&#34;&gt; 视频 1p - 62p (2.20 - 2.21 2.22 自由调整)&lt;br /&gt;
- 可以看出非常努力，后续做好总结复习基本就没问题了，（let, const, var 的区别，变量提升，需要多思考多理解）&lt;/label&gt;&lt;/li&gt;
+ 可以看出非常努力，认真的人总是讨人喜欢的，后续做好总结复习基本就没问题了，（let, const, var 的区别，变量提升，需要多思考多理解）&lt;/label&gt;&lt;/li&gt;
 &lt;li class=&#34;task-list-item&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_1&#34; disabled=&#34;true&#34; /&gt;&lt;label for=&#34;cbx_1&#34;&gt; 视频 63p - 115p (2.23 - 2.24 2.25 自由调整)&lt;/label&gt;&lt;/li&gt;
 &lt;li class=&#34;task-list-item&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_2&#34; disabled=&#34;true&#34; /&gt;&lt;label for=&#34;cbx_2&#34;&gt; 休息 （2.26）&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;第二周&lt;/li&gt;

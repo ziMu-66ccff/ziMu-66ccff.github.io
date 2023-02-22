@@ -506,7 +506,8 @@ Dllolugin 可以提前将指定的类库打包然后引入，这样可以减少�
 &lt;p&gt;JS 基础部分 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMVk4NHkxTDdObj9wPTE1MSZhbXA7dmRfc291cmNlPWUyY2FmNTY5ZTFjMzI1MDdiMTRlMDRjMDdmY2ExNGY5&#34;&gt;此部分学习资源请点击这里&lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&#34;task-list&#34;&gt;
 &lt;li&gt;第一周&lt;/li&gt;
-&lt;li class=&#34;task-list-item&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_0&#34; disabled=&#34;true&#34; /&gt;&lt;label for=&#34;cbx_0&#34;&gt; 视频 1p - 62p (2.20 - 2.21 2.22 自由调整)&lt;/label&gt;&lt;/li&gt;
+&lt;li class=&#34;task-list-item&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_0&#34; checked=&#34;true&#34; disabled=&#34;true&#34; /&gt;&lt;label for=&#34;cbx_0&#34;&gt; 视频 1p - 62p (2.20 - 2.21 2.22 自由调整)&lt;br /&gt;
+ 可以看出非常努力，后续做好总结复习基本就没问题了，（let, const, var 的区别，变量提升，需要多思考多理解）&lt;/label&gt;&lt;/li&gt;
 &lt;li class=&#34;task-list-item&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_1&#34; disabled=&#34;true&#34; /&gt;&lt;label for=&#34;cbx_1&#34;&gt; 视频 63p - 115p (2.23 - 2.24 2.25 自由调整)&lt;/label&gt;&lt;/li&gt;
 &lt;li class=&#34;task-list-item&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_2&#34; disabled=&#34;true&#34; /&gt;&lt;label for=&#34;cbx_2&#34;&gt; 休息 （2.26）&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;第二周&lt;/li&gt;
@@ -1068,8 +1069,8 @@ Dllolugin 可以提前将指定的类库打包然后引入，这样可以减少�
             <category term="前端" scheme="https://zimu-66ccff.github.io/categories/note/front-end/" />
             <category term="JavaScript" scheme="https://zimu-66ccff.github.io/categories/note/front-end/javaScript/" />
             <category term="前端" scheme="https://zimu-66ccff.github.io/tags/%E5%89%8D%E7%AB%AF/" />
-            <category term="浏览器" scheme="https://zimu-66ccff.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" />
             <category term="JS高级" scheme="https://zimu-66ccff.github.io/tags/JS%E9%AB%98%E7%BA%A7/" />
+            <category term="浏览器" scheme="https://zimu-66ccff.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" />
             <category term="事件循环" scheme="https://zimu-66ccff.github.io/tags/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/" />
             <pubDate>Thu, 16 Feb 2023 10:20:17 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;浏览器中的事件循环&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#浏览器中的事件循环&#34;&gt;#&lt;/a&gt; 浏览器中的事件循环&lt;/h1&gt;

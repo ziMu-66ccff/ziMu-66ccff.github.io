@@ -8,15 +8,247 @@
     <author>
       <name>ziMu</name>
     </author>
-    <updated>2023-07-27T08:07:33.000Z</updated>
+    <updated>2023-10-28T06:56:50.000Z</updated>
     <category term="前端" />
     <category term=" Vue" />
     <entry>
-        <id>https://zimu-66ccff.github.io/</id>
-        <title>post</title>
-        <link rel="alternate" href="https://zimu-66ccff.github.io/"/>
-        <content type="html"></content>
-        <updated>2023-07-27T08:07:33.000Z</updated>
+        <id>https://zimu-66ccff.github.io/packageJsonLearn/</id>
+        <title>package.json文件详解</title>
+        <link rel="alternate" href="https://zimu-66ccff.github.io/packageJsonLearn/"/>
+        <content type="html">&lt;h1 id=&#34;packagejson-是什么&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#packagejson-是什么&#34;&gt;#&lt;/a&gt; package.json 是什么&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;package.json&lt;/code&gt;  文件会描述我们项目的所有配置信息（名称，版本，使用协议），所有 npm 包的信息（版本，是否是开发环境依赖）&lt;/p&gt;
+&lt;h1 id=&#34;怎么创建-packagejson-文件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#怎么创建-packagejson-文件&#34;&gt;#&lt;/a&gt; 怎么创建 package.json 文件&lt;/h1&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# npm&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;npm&lt;/span&gt; init&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# pnpm&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;pnpm&lt;/span&gt; init&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h1 id=&#34;属性介绍&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#属性介绍&#34;&gt;#&lt;/a&gt; 属性介绍&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;name&lt;br /&gt;
+ 包的名字， 不能以 &lt;code&gt;.&lt;/code&gt; ,  &lt;code&gt;_&lt;/code&gt; ,  &lt;code&gt;大写字母&lt;/code&gt; 开头&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;npm 域级包&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;介绍及其作用&lt;br /&gt;
+在 npm 的包管理系统中，有一种  &lt;code&gt;scoped packages&lt;/code&gt;  机制，用于将一些 npm 包以 &lt;code&gt;@scope/package&lt;/code&gt;  的命名形式集中在一个命名空间下面，实现域级的包管理。域级包不仅不用担心会和别人的包名重复，同时也能对功能类似的包进行统一的划分和管理；比如我们用 vue 脚手架搭建的项目，里面就有 &lt;code&gt;@vue/cli-plugin-babel&lt;/code&gt; 、 &lt;code&gt;@vue/cli-plugin-eslint&lt;/code&gt;  等等域级包。相同域级范围内的包会被安装在相同的文件路径下，比如 &lt;code&gt;node_modules/@username/&lt;/code&gt; ，可以包含任意数量的作用域包；安装域级包也需要指明其作用域范围：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;npm&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; @username/package&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;我们在初始化项目时可以使用命令行来添加  &lt;code&gt;scope&lt;/code&gt; ：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;npm&lt;/span&gt; init &lt;span class=&#34;token parameter variable&#34;&gt;--scope&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;username&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;version&lt;br /&gt;
+ 包的版本号，npm 包的版本号也是有规范要求的，通用的就是遵循  &lt;code&gt;semver&lt;/code&gt;  语义化版本规范，版本格式为： &lt;code&gt;major.minor.patch&lt;/code&gt; ，每个字母代表的含义如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;主版本号 (major)：当你做了不兼容的 API 修改&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;次版本号 (minor)：当你做了向下兼容的功能性新增&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;修订号 (patch)：当你做了向下兼容的问题修正&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;先行版本号：先行版本号是加到修订号的后面，作为版本号的延伸；当要发行大版本或核心功能时，但不能保证这个版本完全正常，就要先发一个先行版本。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;格式&lt;br /&gt;
+先行版本号的格式是在修订版本号后面加上一个连接号（-），再加上一连串以点（.）分割的标识符，标识符可以由英文、数字和连接号（[0-9A-Za-z-]）组成。例如：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1.0​​.0-alpha
+1.0.0-alpha.1
+1.0.0-0.3.7
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;常见先行版本号&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;alpha：不稳定版本，一般而言，该版本的 Bug 较多，需要继续修改，是测试版本&lt;/li&gt;
+&lt;li&gt;beta：基本稳定，相对于 Alpha 版已经有了很大的进步，消除了严重错误&lt;/li&gt;
+&lt;li&gt;rc：和正式版基本相同，基本上不存在导致错误的 Bug&lt;/li&gt;
+&lt;li&gt;release：最终版本&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;note info&#34;&gt;
+&lt;p&gt;当主版本号升级后，次版本号和修订号需要重置为 0，次版本号进行升级后，修订版本需要重置为 0。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;description&lt;br /&gt;
+ &lt;code&gt;String&lt;/code&gt;  类型，描述项目的信息， 可以显示在 &lt;code&gt;npm search&lt;/code&gt;  命令的返回结果中&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;keywords&lt;br /&gt;
+ &lt;code&gt;Array&lt;/code&gt;  类型， 描述项目的信息， 可以显示在 &lt;code&gt;npm search&lt;/code&gt;  命令的返回结果中&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;homepage&lt;br /&gt;
+ 用来指定项目的主页 or 部署网站的根目录。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;开发环境的作用&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;避免路径问题&lt;/p&gt;
+&lt;p&gt;一些前端框架和构建工具在路由和资源加载时依赖于  &lt;code&gt;homepage&lt;/code&gt;  属性。如果你不在开发环境中设置  &lt;code&gt;homepage&lt;/code&gt; ，可能会在构建应用时遇到问题，尤其是当你使用前端路由（如  &lt;code&gt;React Router&lt;/code&gt; ）时。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;测试相对路径:&lt;/p&gt;
+&lt;p&gt;开发环境中的开发服务器通常使用相对路径来加载资源，而不需要指定完整的 URL。设置  &lt;code&gt;homepage&lt;/code&gt;  属性可以帮助你测试应用在不同路径上的行为，以确保它在生产环境中正常工作。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;生产环境的作用&lt;br /&gt;
+指定应用程序的根 URL，确保所有资源（例如 CSS、JavaScript 文件等）的加载路径正确。这是非常关键的，因为在生产环境中，你的应用可能托管在不同的域名、子目录或路径上，而  &lt;code&gt;homepage&lt;/code&gt;  可以确保资源正确加载。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;author&lt;/p&gt;
+&lt;p&gt;作者， &lt;code&gt;string | &amp;#123;name: string, url?: sting, email?: string&amp;#125;&lt;/code&gt;  类型&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;contributors&lt;/p&gt;
+&lt;p&gt;贡献者列表，  &lt;code&gt;Array&amp;lt;string | &amp;#123;name: string, url?: sting, email?: string&amp;#125;&amp;gt;&lt;/code&gt;  类型&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;maintainers&lt;/p&gt;
+&lt;p&gt;维护者列表， &lt;code&gt;Array&amp;lt;string | &amp;#123;name: string, url?: sting, email?: string&amp;#125;&amp;gt;&lt;/code&gt;  类型&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;bugs&lt;/p&gt;
+&lt;p&gt;提供地址来让用户反馈存在的问题， &lt;code&gt;&amp;#123;url: string, email: string&amp;#125;&lt;/code&gt;  类型&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;license&lt;/p&gt;
+&lt;p&gt;开源协议名称， &lt;code&gt;string&lt;/code&gt;  类型&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;license&lt;/p&gt;
+&lt;p&gt;多个包的开源协议名称， &lt;code&gt;Array&amp;lt;&amp;#123;type: string, url: string&amp;#125;&amp;gt;&lt;/code&gt;  类型&lt;br /&gt;
+&lt;img data-src=&#34;https://i0.imgs.ovh/2023/10/28/FDPvK.png&#34; alt=&#34;license.png&#34; /&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;main&lt;/p&gt;
+&lt;p&gt;指定加载时的入口文件， &lt;code&gt;cmd&lt;/code&gt;  模块规范导入的时候就会加载这个文件，默认为根目录下的 &lt;code&gt;index.js&lt;/code&gt;  文件，  &lt;code&gt;browser&lt;/code&gt;  和 &lt;code&gt;node&lt;/code&gt;  环境下均可使用， &lt;code&gt;string&lt;/code&gt;  类型&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;module&lt;/p&gt;
+&lt;p&gt;指定 &lt;code&gt;esm&lt;/code&gt;  模块规范时的入口文件， &lt;code&gt;browser&lt;/code&gt;  和 &lt;code&gt;node&lt;/code&gt;  环境下均可使用， &lt;code&gt;string&lt;/code&gt;  类型&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;browser&lt;/p&gt;
+&lt;p&gt;指定 &lt;code&gt;browser&lt;/code&gt;  环境下的入口文件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;dependencies&lt;/p&gt;
+&lt;p&gt;项目 &lt;code&gt;运行&lt;/code&gt; 所需的依赖， &lt;code&gt;开发&lt;/code&gt; 和 &lt;code&gt;生产&lt;/code&gt; 环境都需要的依赖，命令如下:&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 不缩写&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;npm&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; xxx &lt;span class=&#34;token parameter variable&#34;&gt;--save&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 缩写&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;npm&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; xxx &lt;span class=&#34;token parameter variable&#34;&gt;-S&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;devDependencies&lt;/p&gt;
+&lt;p&gt;项目 &lt;code&gt;开发&lt;/code&gt; 所需的依赖，只会在 &lt;code&gt;开发&lt;/code&gt; 环境被安装，命令如下：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 不缩写&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;npm&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; xxx --save-dev&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 缩写&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;npm&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; xxx &lt;span class=&#34;token parameter variable&#34;&gt;-D&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;版本号规则：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;没有任何符号：完全百分百匹配，必须使用当前版本号&lt;/li&gt;
+&lt;li&gt;对比符号类的：&amp;gt;(大于) &amp;gt;=(大于等于) &amp;lt;(小于) &amp;lt;=(小于等于)&lt;/li&gt;
+&lt;li&gt;波浪符号&lt;sub&gt;：固定主版本号和次版本号，修订号可以随意更改，例如&lt;/sub&gt; 2.0.0，可以使用 2.0.0、2.0.2 、2.0.9 的版本。&lt;/li&gt;
+&lt;li&gt;插入符号&lt;sup&gt;：固定主版本号，次版本号和修订号可以随意更改，例如&lt;/sup&gt; 2.0.0，可以使用 2.0.1、2.2.2 、2.9.9 的版本。&lt;/li&gt;
+&lt;li&gt;任意版本 *：对版本没有限制，一般不用&lt;/li&gt;
+&lt;li&gt;或符号：|| 可以用来设置多个版本号限制规则，例如 &amp;gt;= 3.0.0 || &amp;lt;= 1.0.0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;peerDependencies&lt;/p&gt;
+&lt;p&gt;用来告诉别人当使用这个依赖的时候，需要使用那些特定版本的依赖，比如 &lt;code&gt;依赖 A&lt;/code&gt;  的  &lt;code&gt;package.json&lt;/code&gt;  中声明了  &lt;code&gt;peerDependencies&lt;/code&gt; ,  &lt;code&gt;xxx6.0&lt;/code&gt;  吗，那么如果安装了 &lt;code&gt;依赖 A&lt;/code&gt;  就也应该安装  &lt;code&gt;xxx6.0&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;note info&#34;&gt;
+&lt;p&gt;但是请注意， &lt;code&gt;peerDependencies&lt;/code&gt;  下的依赖并不会被强行安装，它只是告诉你，应该安装对应版本的这些依赖，因为该依赖依赖于这些依赖，如果不安装，可能会出现问题&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;bundledDependencies&lt;/p&gt;
+&lt;p&gt;依赖默认时不会被打包的，但是 &lt;code&gt;bundledDependencies&lt;/code&gt;  下的依赖也会被一起打包&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;optionalDependencies&lt;/p&gt;
+&lt;p&gt;指定一些可选的依赖，这些依赖也会被 &lt;code&gt;npm install&lt;/code&gt;  安装，但是安装失败了，不会报错，不会导致整个 &lt;code&gt;npm install&lt;/code&gt;  失败&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;files&lt;/p&gt;
+&lt;p&gt;用来指定 npm 发包时应该包括哪些目录和文件， &lt;code&gt;string | Array&amp;lt;string&amp;gt;&lt;/code&gt;  类型&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;bin&lt;/p&gt;
+&lt;p&gt;用来指定命令和对应的可执行文件，例如：&lt;/p&gt;
+&lt;figure class=&#34;highlight json&#34;&gt;&lt;figcaption data-lang=&#34;JSON&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token property&#34;&gt;&#34;name&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;my-cli-tool&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token property&#34;&gt;&#34;version&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;1.0.0&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token property&#34;&gt;&#34;bin&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token property&#34;&gt;&#34;my-command&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;bin/my-command.js&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;&lt;code&gt;bin&lt;/code&gt;  中的键（例如  &lt;code&gt;&amp;quot;my-command&amp;quot;&lt;/code&gt; ）是用户在命令行中执行的命令名称。 &lt;code&gt;bin&lt;/code&gt;  中的值是指向模块中实际可执行文件的相对路径。当全局安装 &lt;code&gt;my-cli-tool&lt;/code&gt;  的时候，系统会创建一个符号链接，将  &lt;code&gt;bin&lt;/code&gt;  中指定的命令名称与相应的可执行文件关联，然后这个符号连接会被添加到系统的 &lt;code&gt;PATH&lt;/code&gt;  变量中。当我们执行 &lt;code&gt;my-command&lt;/code&gt;  命令的时候，系统就会通过 &lt;code&gt;PATH&lt;/code&gt;  的符号连接找到对应的 &lt;code&gt;bin/my-command&lt;/code&gt;  文件并执行其中的代码。如果我们的包以 &lt;code&gt;依赖&lt;/code&gt; 的方式被安装时，如果有 &lt;code&gt;bin&lt;/code&gt; ，就会在 &lt;code&gt;node_modules/.bin/&lt;/code&gt;  生成对应的文件，然后建立符号链接，所有 &lt;code&gt;node_modules/.bin/&lt;/code&gt;  目录下的命令都可以使用 &lt;code&gt;npm run [命令]&lt;/code&gt;  的格式下运行。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;directories&lt;/p&gt;
+&lt;p&gt;展示项目的目录结构信息，用来告诉用户每个目录在什么位置， 比如：&lt;/p&gt;
+&lt;figure class=&#34;highlight json&#34;&gt;&lt;figcaption data-lang=&#34;JSON&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token property&#34;&gt;&#34;name&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;my-module&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token property&#34;&gt;&#34;version&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;1.0.0&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token property&#34;&gt;&#34;directories&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token property&#34;&gt;&#34;bin&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;bin&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token property&#34;&gt;&#34;lib&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;src&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token property&#34;&gt;&#34;doc&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;docs&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;用来告诉用户 or 其他开发者 可执行文件请放到  &lt;code&gt;bin&lt;/code&gt;  目录，库的核心代码请放到  &lt;code&gt;lib&lt;/code&gt;  目录，文档代码请放到  &lt;code&gt;doc&lt;/code&gt;  目录。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;repository&lt;/p&gt;
+&lt;p&gt;用来告诉想要加入我们，对我们的代码做贡献的人，我们的代码仓库在哪里， &lt;code&gt;&amp;#123;type: string, url: string, directory: string&amp;#125;&lt;/code&gt;  类型。比如：&lt;/p&gt;
+&lt;figure class=&#34;highlight json&#34;&gt;&lt;figcaption data-lang=&#34;JSON&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token property&#34;&gt;&#34;repository&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token property&#34;&gt;&#34;type&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;git&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token property&#34;&gt;&#34;url&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;https://github.com/DomeSy&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token property&#34;&gt;&#34;directory&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;描述话语&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;script&lt;/p&gt;
+&lt;p&gt;指定对应命令的脚本（缩写）, 比如：&lt;/p&gt;
+&lt;figure class=&#34;highlight json&#34;&gt;&lt;figcaption data-lang=&#34;JSON&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token property&#34;&gt;&#34;scripts&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;   &lt;span class=&#34;token property&#34;&gt;&#34;start&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;cross-env UMI_ENV=dev umi dev&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;当执行 &lt;code&gt;npm run script&lt;/code&gt;  的时候就相当于执行了 &lt;code&gt;cross-env UMI_ENV=dev umi dev&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;config&lt;/p&gt;
+&lt;p&gt;用来添加命令行的环境变量， 比如：&lt;/p&gt;
+&lt;figure class=&#34;highlight json&#34;&gt;&lt;figcaption data-lang=&#34;JSON&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token property&#34;&gt;&#34;name&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;domesy&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token property&#34;&gt;&#34;config&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token property&#34;&gt;&#34;port&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;8088&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token property&#34;&gt;&#34;script&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token property&#34;&gt;&#34;start&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;node server.js&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;当我们在 node 环境中打印 &lt;code&gt;process.npm_package_config_port&lt;/code&gt;  的时候就会打印出 8080&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;engines&lt;/p&gt;
+&lt;p&gt;用来指定本库的运行条件， 比如：&lt;/p&gt;
+&lt;figure class=&#34;highlight json&#34;&gt;&lt;figcaption data-lang=&#34;JSON&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token property&#34;&gt;&#34;engines&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token property&#34;&gt;&#34;node&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;&gt;=0.10.3 &amp;lt;0.12&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;这里就限制了，如果想要运行本库，node 的版本必须大于等于 0.10.3 小于 0.12&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;os&lt;/p&gt;
+&lt;p&gt;用来指定可以在哪些操作系统上运行，比如：&lt;/p&gt;
+&lt;figure class=&#34;highlight json&#34;&gt;&lt;figcaption data-lang=&#34;JSON&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token property&#34;&gt;&#34;os&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;linux&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;win64&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;就说明可以在 &lt;code&gt;linux&lt;/code&gt;  和 &lt;code&gt;64位的windows&lt;/code&gt;  操作系统上运行&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;cpu&lt;/p&gt;
+&lt;p&gt;用来指定可以在哪些架构下的 &lt;code&gt;cpu&lt;/code&gt;  上运行， 比如:&lt;/p&gt;
+&lt;figure class=&#34;highlight json&#34;&gt;&lt;figcaption data-lang=&#34;JSON&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token property&#34;&gt;&#34;cpu&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;x64&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;ia32&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;private&lt;/p&gt;
+&lt;p&gt;用来指定这是否是一个私人的库，如果是，那么就不能在 npm 上面发布公开，  &lt;code&gt;boolean&lt;/code&gt;  类型&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;publishConfig&lt;/p&gt;
+&lt;p&gt;用来指定发包时候的一些配置，比如发到哪个包管理服务器上面，是发布哪个版本，访问级别（哪些用户可以访问）比如：&lt;/p&gt;
+&lt;figure class=&#34;highlight json&#34;&gt;&lt;figcaption data-lang=&#34;JSON&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token property&#34;&gt;&#34;publishConfig&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token property&#34;&gt;&#34;tag&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;1.0.0&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;// 发布 1.0.0 版本&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token property&#34;&gt;&#34;registry&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;https://www.npmjs.com/package/domesy-cli&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;// 发布到这个包管理服务器上面&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token property&#34;&gt;&#34;access&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;public&#34;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;// 所有用户都可以访问&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;preferGlobal&lt;/p&gt;
+&lt;p&gt;用来指定当用户不全局下载该库的时候是否发出警告，  &lt;code&gt;boolean&lt;/code&gt;  类型&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;browserslist&lt;/p&gt;
+&lt;p&gt;指定该库支持的浏览器类型， 比如&lt;/p&gt;
+&lt;figure class=&#34;highlight json&#34;&gt;&lt;figcaption data-lang=&#34;JSON&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token property&#34;&gt;&#34;browserslist&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token property&#34;&gt;&#34;production&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;&gt;0.2%&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;not dead&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;not op_mini all&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token property&#34;&gt;&#34;development&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;last 1 chrome version&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;last 1 firefox version&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;last 1 safari version&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <category term="笔记" scheme="https://zimu-66ccff.github.io/categories/note/" />
+        <category term="前端" scheme="https://zimu-66ccff.github.io/categories/note/front-end/" />
+        <category term="前端工程化" scheme="https://zimu-66ccff.github.io/categories/note/front-end/engineering/" />
+        <category term="前端" scheme="https://zimu-66ccff.github.io/tags/%E5%89%8D%E7%AB%AF/" />
+        <category term="前端工程化" scheme="https://zimu-66ccff.github.io/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/" />
+        <category term="package.json文件" scheme="https://zimu-66ccff.github.io/tags/package-json%E6%96%87%E4%BB%B6/" />
+        <updated>2023-10-28T06:56:50.000Z</updated>
     </entry>
     <entry>
         <id>https://zimu-66ccff.github.io/vite%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%BE%97%E5%8A%9B%E5%8A%A9%E6%89%8B-esbuild-rollup/</id>
@@ -522,7 +754,9 @@ error 或 2: 表示开启规则，不过违背规则后抛出 error，程序会�
 &lt;/li&gt;
 &lt;/ol&gt;
 </content>
-        <category term="笔记，前端，前端工程化" scheme="https://zimu-66ccff.github.io/categories/%E7%AC%94%E8%AE%B0%EF%BC%8C%E5%89%8D%E7%AB%AF%EF%BC%8C%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/" />
+        <category term="笔记" scheme="https://zimu-66ccff.github.io/categories/note/" />
+        <category term="前端" scheme="https://zimu-66ccff.github.io/categories/note/front-end/" />
+        <category term="前端工程化" scheme="https://zimu-66ccff.github.io/categories/note/front-end/engineering/" />
         <category term="前端" scheme="https://zimu-66ccff.github.io/tags/%E5%89%8D%E7%AB%AF/" />
         <category term="前端工程化" scheme="https://zimu-66ccff.github.io/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/" />
         <category term="工作流配置" scheme="https://zimu-66ccff.github.io/tags/%E5%B7%A5%E4%BD%9C%E6%B5%81%E9%85%8D%E7%BD%AE/" />

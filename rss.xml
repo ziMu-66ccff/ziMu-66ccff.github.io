@@ -10,10 +10,141 @@
         </author>
         <description>干净澄澈，真诚自然</description>
         <language>zh-CN</language>
-        <pubDate>Thu, 16 Nov 2023 18:55:54 +0800</pubDate>
-        <lastBuildDate>Thu, 16 Nov 2023 18:55:54 +0800</lastBuildDate>
+        <pubDate>Sat, 25 Nov 2023 18:03:11 +0800</pubDate>
+        <lastBuildDate>Sat, 25 Nov 2023 18:03:11 +0800</lastBuildDate>
         <category term="前端" />
         <category term=" Vue" />
+        <item>
+            <guid isPermalink="true">https://zimu-66ccff.github.io/bfc/</guid>
+            <title>bfc-块级格式化上下文</title>
+            <link>https://zimu-66ccff.github.io/bfc/</link>
+            <category term="笔记" scheme="https://zimu-66ccff.github.io/categories/note/" />
+            <category term="前端" scheme="https://zimu-66ccff.github.io/categories/note/front-end/" />
+            <category term="CSS" scheme="https://zimu-66ccff.github.io/categories/note/front-end/css/" />
+            <category term="前端" scheme="https://zimu-66ccff.github.io/tags/%E5%89%8D%E7%AB%AF/" />
+            <category term="CSS" scheme="https://zimu-66ccff.github.io/tags/CSS/" />
+            <category term="BFC" scheme="https://zimu-66ccff.github.io/tags/BFC/" />
+            <pubDate>Sat, 25 Nov 2023 18:03:11 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;什么是-bfc&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#什么是-bfc&#34;&gt;#&lt;/a&gt; 什么是 BFC&lt;/h1&gt;
+&lt;p&gt;BFC 就是一个 css 布局区域，这个区域内元素布局有一定的规则&lt;/p&gt;
+&lt;h1 id=&#34;哪些元素是-bfc怎么让元素成为-bfc&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#哪些元素是-bfc怎么让元素成为-bfc&#34;&gt;#&lt;/a&gt; 哪些元素是 BFC（怎么让元素成为 BFC）&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;body 标签就是一个 bfc&lt;/li&gt;
+&lt;li&gt;inline-block 是 bfc&lt;/li&gt;
+&lt;li&gt;float 的元素 是 bfc&lt;/li&gt;
+&lt;li&gt;除了 static, relative 的定位元素 是 bfc&lt;/li&gt;
+&lt;li&gt;overflow 设置为 hidden，auto 的元素 是 bfc&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;bfc-的规则bfc-的特点&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#bfc-的规则bfc-的特点&#34;&gt;#&lt;/a&gt; BFC 的规则，BFC 的特点&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;BFC 区域内的普通的块级元素垂直方向由上到下排列&lt;br /&gt;
+我们平时写的 html 标签都在 body 标签里面，也就是都在 bfc 渲染区域内，所以要遵守这个规则，所以才会从上到下排列&lt;/li&gt;
+&lt;li&gt;BFC 计算高度的时候，会计算浮动元素和定位元素的高度。&lt;br /&gt;
+基于这一点，可以去除浮动带来的副作用（让父元素变成 bfc， 这样就会计算浮动元素的高度）&lt;/li&gt;
+&lt;li&gt;BFC 渲染区域内的上下相邻的普通的块级元素垂直方向会出现外边距合并&lt;/li&gt;
+&lt;li&gt;BFC 的样式不受外界影响&lt;br /&gt;
+基于这个可以解决外边距合并的问题，只需要让其中一个元素成为 BFC，因为成为 BFC 的元素的外边距是自己的属性，也就是 BFC 自身的属性&lt;/li&gt;
+&lt;li&gt;BFC 不会和浮动元素重叠&lt;br /&gt;
+基于这一点可以做两栏布局，和三栏布局&lt;/li&gt;
+&lt;/ol&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://zimu-66ccff.github.io/whyUnocss/</guid>
+            <title>为什么选择unocss</title>
+            <link>https://zimu-66ccff.github.io/whyUnocss/</link>
+            <category term="笔记" scheme="https://zimu-66ccff.github.io/categories/note/" />
+            <category term="前端" scheme="https://zimu-66ccff.github.io/categories/note/front-end/" />
+            <category term="CSS" scheme="https://zimu-66ccff.github.io/categories/note/front-end/css/" />
+            <category term="前端" scheme="https://zimu-66ccff.github.io/tags/%E5%89%8D%E7%AB%AF/" />
+            <category term="CSS" scheme="https://zimu-66ccff.github.io/tags/CSS/" />
+            <category term="原子化css" scheme="https://zimu-66ccff.github.io/tags/%E5%8E%9F%E5%AD%90%E5%8C%96css/" />
+            <pubDate>Sat, 25 Nov 2023 17:20:45 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;什么是原子化-css&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#什么是原子化-css&#34;&gt;#&lt;/a&gt; 什么是原子化 css&lt;/h1&gt;
+&lt;p&gt;原子化 css 就是提供了很多 &lt;code&gt;preset class&lt;/code&gt; （预设类），就是提前写好了很多类名，这些类名都有自己的样式，可以直接用这些类名，就不需要写 css 了（提供的预设类是足够的，完全不需要写 css）&lt;/p&gt;
+&lt;h1 id=&#34;早期原子化-css-带来的问题现在都解决了&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#早期原子化-css-带来的问题现在都解决了&#34;&gt;#&lt;/a&gt; 早期原子化 css 带来的问题（现在都解决了）&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;不能按需引入预设类，导致项目里有很多用不上的预设类，影响构建速度&lt;br /&gt;
+&lt;strong&gt;解决方案&lt;/strong&gt;：现在可以构建阶段扫描代码，能够按照代码中的实际使用情况生成工具类，解决了原子类使 CSS 产物膨胀问题。&lt;/li&gt;
+&lt;li&gt;不能使用提供的预设类来自定义类，导致不能完全脱离 css 代码&lt;br /&gt;
+&lt;strong&gt;解决方案&lt;/strong&gt;：针对原子类堆叠降低可读性的问题，提供了  &lt;code&gt;@apply&lt;/code&gt;  语法支持在 CSS 中对多个原子类进行合并，与语义化 CSS 实现了很好的配合。&lt;/li&gt;
+&lt;li&gt;没有插件提供，提升我们使用预设类的效率&lt;br /&gt;
+&lt;strong&gt;解决方案&lt;/strong&gt;：现在都推出了 VSCode 插件，为编写原子类提供了充分的提示与自动补全。&lt;/li&gt;
+&lt;/ol&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://zimu-66ccff.github.io/whySendSeacon/</guid>
+            <title>前端监控中为什么选择sendBeacon来发送数据</title>
+            <link>https://zimu-66ccff.github.io/whySendSeacon/</link>
+            <category term="笔记" scheme="https://zimu-66ccff.github.io/categories/note/" />
+            <category term="前端" scheme="https://zimu-66ccff.github.io/categories/note/front-end/" />
+            <category term="前端监控" scheme="https://zimu-66ccff.github.io/categories/note/front-end/FEMonitoring/" />
+            <category term="前端" scheme="https://zimu-66ccff.github.io/tags/%E5%89%8D%E7%AB%AF/" />
+            <category term="前端监控" scheme="https://zimu-66ccff.github.io/tags/%E5%89%8D%E7%AB%AF%E7%9B%91%E6%8E%A7/" />
+            <category term="sendSeacon" scheme="https://zimu-66ccff.github.io/tags/sendSeacon/" />
+            <pubDate>Mon, 20 Nov 2023 11:11:40 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;前端监控中发送数据通常有什么样的问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#前端监控中发送数据通常有什么样的问题&#34;&gt;#&lt;/a&gt; 前端监控中发送数据通常有什么样的问题&lt;/h1&gt;
+&lt;p&gt;前端监控中通常尝试在卸载（unload）文档之前向 Web 服务器发送数据。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;过早的发送数据可能导致错过收集数据的机会。&lt;/li&gt;
+&lt;li&gt;然而，对于开发者来说保证在文档卸载期间发送数据一直是一个困难。
+&lt;ul&gt;
+&lt;li&gt;在 &lt;code&gt;unload&lt;/code&gt;  时，无法保证数据被可靠的稳定的发送出去了，因为浏览器通常会忽略在  &lt;code&gt;unload&lt;/code&gt;  事件处理器中产生的异步  &lt;code&gt;XMLHttpRequest。&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;发送数据可能会迫使浏览器延迟卸载文档，并使得下一个导航出现的更晚。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;各种技术发送数据时的优缺点&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#各种技术发送数据时的优缺点&#34;&gt;#&lt;/a&gt; 各种技术发送数据时的优缺点&lt;/h1&gt;
+&lt;h2 id=&#34;xmlhttprequest-或-fetch-api&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#xmlhttprequest-或-fetch-api&#34;&gt;#&lt;/a&gt; XMLHttpRequest 或 Fetch API：&lt;/h2&gt;
+&lt;h3 id=&#34;优点&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#优点&#34;&gt;#&lt;/a&gt; 优点：&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;支持各种请求方法： &lt;code&gt; XMLHttpRequest&lt;/code&gt;  和  &lt;code&gt;Fetch API&lt;/code&gt;  支持多种请求方法，包括  &lt;code&gt;GET&lt;/code&gt; 、 &lt;code&gt;POST&lt;/code&gt;  等。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;缺点&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#缺点&#34;&gt;#&lt;/a&gt; 缺点：&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;同步请求可能阻塞页面： 如果在页面卸载或跳转时同步发送请求，可能会阻塞页面的卸载或跳转，影响用户体验。&lt;/li&gt;
+&lt;li&gt;不适用于页面关闭时的异步请求：浏览器通常会忽略在  &lt;code&gt;unload&lt;/code&gt;  事件处理器中产生的异步  &lt;code&gt;XMLHttpRequest。&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;image-对象&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#image-对象&#34;&gt;#&lt;/a&gt; image 对象&lt;/h2&gt;
+&lt;h3 id=&#34;优点-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#优点-2&#34;&gt;#&lt;/a&gt; 优点：&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;简单： 通过创建 Image 对象，可以简单地发送 GET 请求。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;缺点-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#缺点-2&#34;&gt;#&lt;/a&gt; 缺点：&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;仅支持 GET 请求： 由于是通过图片的 src 属性发送请求，只能发送 GET 请求。&lt;/li&gt;
+&lt;li&gt;不可靠： 无法确定请求是否成功，不能获得服务器的响应状态。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;sendbeacon&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#sendbeacon&#34;&gt;#&lt;/a&gt; sendBeacon&lt;/h2&gt;
+&lt;h3 id=&#34;优点-3&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#优点-3&#34;&gt;#&lt;/a&gt; 优点：&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;异步方式发送请求：  &lt;code&gt;sendBeacon&lt;/code&gt;  是异步的，不会阻塞页面的卸载或者跳转，适用于页面关闭时仍需要发送统计数据的场景。&lt;/li&gt;
+&lt;li&gt;可靠性： 由于是浏览器在后台默默处理，不会因为页面的关闭或者跳转而中断发送。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;缺点-3&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#缺点-3&#34;&gt;#&lt;/a&gt; 缺点：&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;仅支持  &lt;code&gt;POST&lt;/code&gt;  请求：  &lt;code&gt;sendBeacon&lt;/code&gt;  只支持使用  &lt;code&gt;POST&lt;/code&gt;  方法发送数据，因此不适用于所有类型的请求。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;前端监控中为什么选择-sendbeacon-来发送数据&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#前端监控中为什么选择-sendbeacon-来发送数据&#34;&gt;#&lt;/a&gt; 前端监控中为什么选择 sendBeacon 来发送数据&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;是异步发送数据，不会阻塞页面的卸载和跳转&lt;/li&gt;
+&lt;li&gt;可靠性很高，不会因为页面的关闭 or 跳转 而 终端发送&lt;/li&gt;
+&lt;li&gt;虽然只支持 &lt;code&gt;post&lt;/code&gt;  请求，但是用来发送埋点的统计数据，却足够了，也极为合适&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;sendbeacon-使用方法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#sendbeacon-使用方法&#34;&gt;#&lt;/a&gt; sendBeacon 使用方法&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;navigator.sendBeacon(url, data);&lt;/code&gt; &lt;br /&gt;
+ &lt;code&gt;url&lt;/code&gt; : 上报地址（接口地址）&lt;br /&gt;
+ &lt;code&gt;data&lt;/code&gt; ： 可以是 &lt;code&gt;ArrayBufferView&lt;/code&gt;  , &lt;code&gt;Blob&lt;/code&gt; ,  &lt;code&gt;DOMString&lt;/code&gt; ,  &lt;code&gt;Formdata&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;根据官方规范，需要  &lt;code&gt;request header&lt;/code&gt;  为 CORS-safelisted-request-header，在这里则需要保证  &lt;code&gt;Content-Type &lt;/code&gt; 为以下三种之一：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;application/x-www-form-urlencoded&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;multipart/form-data&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;text/plain&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我们一般会用到 DOMString , Blob 和 Formdata 这三种对象作为数据发送到后端，下面以这三种方式为例进行说明。&lt;/p&gt;
+&lt;figure class=&#34;highlight javascript&#34;&gt;&lt;figcaption data-lang=&#34;javascript&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; queryString &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;query-string&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;// 1. DOMString 类型，该请求会自动设置请求头的 Content-Type 为 text/plain&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;token function-variable function&#34;&gt;reportData&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;url&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; data&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&gt;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  navigator&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;sendBeacon&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;url&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; data&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;// 2. 如果用 Blob 发送数据，这时需要我们手动设置 Blob 的 MIME type，&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;// 一般设置为 application/x-www-form-urlencoded。&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;// 然后可以用 query-string 库来做编吗将 data 编码成 query-string 格式&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;token function-variable function&#34;&gt;reportData&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;url&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; data&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&gt;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; blob &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Blob&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    queryString&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;stringify&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;data&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token literal-property property&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;application/x-www-form-urlencoded&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  navigator&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;sendBeacon&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;url&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; blob&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;// 3. 发送的是 Formdata 类型，&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;// 此时该请求会自动设置请求头的 Content-Type 为 multipart/form-data。&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;token function-variable function&#34;&gt;reportData&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;url&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; data&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&gt;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;24&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; formData &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;FormData&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;25&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  Object&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;keys&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;data&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;forEach&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&gt;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;26&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;let&lt;/span&gt; value &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; data&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;key&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;27&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;typeof&lt;/span&gt; value &lt;span class=&#34;token operator&#34;&gt;!==&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;string&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;28&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token comment&#34;&gt;//formData 只能 append string 或 Blob&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;29&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      value &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token constant&#34;&gt;JSON&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;stringify&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;value&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;30&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;31&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    formData&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;append&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;key&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; value&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;32&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;33&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  navigator&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;sendBeacon&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;url&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; formData&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;34&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt; ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://zimu-66ccff.github.io/globLearn/</guid>
             <title>glob语法详解</title>
@@ -204,6 +335,8 @@
 &lt;li&gt;&lt;code&gt;git log&lt;/code&gt;  显示 commit 的 SHA1 值，创建作者和时间，提交信息，会多行显示&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;git log --oneline&lt;/code&gt;  只显示提交的 SHA1 值和提交信息，SHA1 还是缩短显示前几位，只在一行显示&lt;/li&gt;
 &lt;/ol&gt;
+&lt;h1 id=&#34;推荐一个特别好的-git-的交互式学习网站&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#推荐一个特别好的-git-的交互式学习网站&#34;&gt;#&lt;/a&gt; 推荐一个特别好的 git 的交互式学习网站&lt;/h1&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9sZWFybmdpdGJyYW5jaGluZy5qcy5vcmcv&#34;&gt;https://learngitbranching.js.org/&lt;/span&gt;&lt;/p&gt;
  ]]></description>
         </item>
         <item>
@@ -1790,232 +1923,6 @@ React 没有双向绑定，需要给 JSX 表单元素的 &lt;code&gt;value&lt;/c
 &lt;li&gt;React&lt;br /&gt;
  利用一个 &lt;code&gt;classnames&lt;/code&gt;  的库，然后默认导出一个 &lt;code&gt;classNames&lt;/code&gt;  方法，下面是一个使用案列&lt;br /&gt;
 &lt;img data-src=&#34;https://i.328888.xyz/2023/03/01/6flyy.png&#34; alt=&#34;6flyy.png&#34; /&gt;&lt;/li&gt;
-&lt;/ul&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://zimu-66ccff.github.io/dynamicRouter/</guid>
-            <title>基于菜单的动态路由</title>
-            <link>https://zimu-66ccff.github.io/dynamicRouter/</link>
-            <category term="笔记" scheme="https://zimu-66ccff.github.io/categories/note/" />
-            <category term="项目" scheme="https://zimu-66ccff.github.io/categories/note/project/" />
-            <category term="项目" scheme="https://zimu-66ccff.github.io/tags/%E9%A1%B9%E7%9B%AE/" />
-            <category term="动态路由" scheme="https://zimu-66ccff.github.io/tags/%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1/" />
-            <pubDate>Wed, 22 Feb 2023 14:28:54 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;基本原理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#基本原理&#34;&gt;#&lt;/a&gt; 基本原理&lt;/h1&gt;
-&lt;ol&gt;
-&lt;li&gt;根据用户的 id 发送请求获取用户能够看到的菜单&lt;/li&gt;
-&lt;li&gt;将需要动态注册的路由对象放到一个数组里面
-&lt;ul&gt;
-&lt;li&gt;路由对象在一个个单独的文件里面&lt;/li&gt;
-&lt;li&gt;需要从文件中读取路由对象，然后放到数组里面（这一步我们将进行自动化操作）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;根据菜单去匹配对应的路由对象，并将其注册
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Router.addRoute(&#39;main&#39;, route)&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h1 id=&#34;详细步骤&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#详细步骤&#34;&gt;#&lt;/a&gt; 详细步骤&lt;/h1&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;根据用户的 id 发送请求获取用户能够看到的菜单&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;这里我们看一下服务器返回给我们的信息&lt;br /&gt;
-&lt;img data-src=&#34;https://i.328888.xyz/2023/02/22/xySLq.png&#34; alt=&#34;返回的菜单信息&#34; /&gt;&lt;/li&gt;
-&lt;li&gt;对返回的信息进行一波浅浅的分析 🤔&lt;br /&gt;
-是一个数组，数组里面存储的是所有一级菜单的信息， &lt;code&gt;name&lt;/code&gt; , &lt;code&gt;url&lt;/code&gt; ，然后我们发现还有一个 &lt;code&gt;children&lt;/code&gt;  熟悉，也是一个数组，里面存储的是二级菜单的信息&lt;/li&gt;
-&lt;li&gt;好家伙，你现在是不是有想法了 🤔&lt;br /&gt;
-我们直接拿着这个服务器返回给我们的数据，然后去生成菜单不就可以了吗，这样用户看见的就是他能看见的菜单了，他看不到的菜单我们也不会渲染，万事大吉 😁。&lt;/li&gt;
-&lt;li&gt;这样操作带来的问题&lt;br /&gt;
-如果用户也是一个前端呢，他直接在 url 那里输入他没有权限访问的路由，不就可以进入他本不能访问的界面了吗？哦豁，完蛋 🥲。所以我们需要动态注册路由啦，连路由都没有，我看他怎么访问，嗯哼。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;将需要动态注册的路由对象放到一个数组里面&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;首先明白一点，我们的路由对象是放在一个个文件里面的，这样结构更清晰&lt;br /&gt;
-举个列子，在 &lt;code&gt;router/main/analysis/dashboard/dashboard.ts&lt;/code&gt;  里面才有我们导出的路由对象，如下图&lt;br /&gt;
-&lt;img data-src=&#34;https://i.328888.xyz/2023/02/22/x4g2p.png&#34; alt=&#34;路由对象列子&#34; /&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;像这样的文件及其里面的路由对象还有很多，接下来我们要做的就是将其放进一个数组里面，这里我们会进行自动化操作&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;利用 &lt;code&gt;import.meta.glob(path, options)&lt;/code&gt;  这个方法来自动获取 &lt;code&gt;path&lt;/code&gt;  路径里面的所有文件，那么我们先用 &lt;code&gt;files = import.meta.glob(&#39;../router/main/**/*.ts&#39;)&lt;/code&gt;  来获取一下我们在此路径里面的 ts 文件导出的路由对象吧，接下来给你们打印一下 &lt;code&gt;files&lt;/code&gt;  看看。&lt;br /&gt;
-&lt;img data-src=&#34;https://i.328888.xyz/2023/02/22/x4G48.png&#34; alt=&#34;获取的files&#34; /&gt;&lt;br /&gt;
- 我们发现是一个对象，key 是文件的 &lt;code&gt;path&lt;/code&gt;  路径，value 却是一个箭头函数，这是因为他默认是懒加载获取的文件的，可是这样问题就来了，这样我们要怎么取出文件里面导出的路由对象呢 🤔？&lt;/li&gt;
-&lt;li&gt;通过 &lt;code&gt;options&lt;/code&gt;  选项来获取路由对象&lt;br /&gt;
-别急别急， &lt;code&gt;import.meta.glob(path, options)&lt;/code&gt;  方法不是还有第二个参数 &lt;code&gt;options&lt;/code&gt;  吗，它是一个配置对象，我们可以设置这个配置对象的 &lt;code&gt;eager&lt;/code&gt;  属性为 &lt;code&gt;true&lt;/code&gt; ，好的，那我们接下来 &lt;code&gt;files = import.meta.glob(&#39;../router/main/**/*.ts&#39;, &amp;#123;eager: true&amp;#125;)&lt;/code&gt;  这样试一下，给你们看看这样做后打印的 &lt;code&gt;files&lt;/code&gt; &lt;br /&gt;
-&lt;img data-src=&#34;https://i.328888.xyz/2023/02/22/x4P4J.png&#34; alt=&#34;配置eager后的files&#34; /&gt;&lt;br /&gt;
- 怎么样，是不是 value 由箭头函数变成了模块 Moudule，这个模块其实就是一个对象，然后对象里面有个 &lt;code&gt;default&lt;/code&gt;  属性， &lt;code&gt;default&lt;/code&gt;  属性的 value 可不就是我们导出的路由对象吗，欧克，大功告成，至此我们已经能够获取我们在文件里面导出的路由对象了。&lt;/li&gt;
-&lt;li&gt;将路由对象注册到数组里面&lt;figure class=&#34;highlight typescript&#34;&gt;&lt;figcaption data-lang=&#34;typescript&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; key &lt;span class=&#34;token keyword&#34;&gt;in&lt;/span&gt; files&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; module &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; files&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;key&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  localRoutes&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;push&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;module&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;default&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;欧克，这样我们就成功的将我们在文件里面导出的路由对象放到 &lt;code&gt;localRoutes&lt;/code&gt;  这个对象里面了，大功告成，顺便提醒一下这里用 &lt;code&gt;for in&lt;/code&gt;  是因为数组也是一个对象嘛，相信你肯定是知道的。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;最后读取文件里面导出的路由对象并放到一个数组里面的操作，我们最好给封装到一个函数里面，接下来是封装的函数的代码&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&#34;highlight typescript&#34;&gt;&lt;figcaption data-lang=&#34;typescript&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;loadLocalRoutes&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token comment&#34;&gt;// 1. 动态获取所有的路由对象，放到数组中&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token comment&#34;&gt;// * 路由对象都在独立的文件中&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token comment&#34;&gt;// * 从文件中将所有路由对象先读取数组中&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; localRoutes&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; RouteRecordRaw&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token comment&#34;&gt;// 1.1. 读取 router/main 所有的 ts 文件&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; files&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; Record&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token builtin&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token builtin&#34;&gt;any&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;meta&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;glob&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;../router/main/*_/_.ts&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    eager&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token comment&#34;&gt;// 1.2. 将加载的对象放到 localRoutes&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; key &lt;span class=&#34;token keyword&#34;&gt;in&lt;/span&gt; files&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; module &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; files&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;key&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    localRoutes&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;push&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;module&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;default&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; localRoutes&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;根据菜单去匹配对应的路由对象，并将其注册&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;根据菜单匹配需要注册的路由对象，并将其放进一个数组&lt;br /&gt;
-我们可以发现我们请求菜单返回的数据里面每一个一级菜单 or 二级菜单都是有一个 url 的，并且这个 url 和我们的路由对象的 path 是对应的，所以我们就可以基于这个来匹配。&lt;em&gt;但是有一个注意点，一级菜单是没有对应的界面，所以注册一级菜单对应的路由的时候，我们应该将其重定向到子菜单的第一个选项的路由&lt;/em&gt; 。&lt;strong&gt;同样，这些操作，我们也可以将其封装到一个函数里面，下面是函数的实现&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&#34;highlight typescript&#34;&gt;&lt;figcaption data-lang=&#34;typescript&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;mapMenusToRoutes&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;userMenus&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token builtin&#34;&gt;any&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token comment&#34;&gt;// 1. 加载本地路由&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; localRoutes &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;loadLocalRoutes&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token comment&#34;&gt;// 2. 根据菜单去匹配正确的路由&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; routes&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; RouteRecordRaw&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; menu &lt;span class=&#34;token keyword&#34;&gt;of&lt;/span&gt; userMenus&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; submenu &lt;span class=&#34;token keyword&#34;&gt;of&lt;/span&gt; menu&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;children&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; route &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; localRoutes&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;find&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;item&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&gt;&lt;/span&gt; item&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;path &lt;span class=&#34;token operator&#34;&gt;===&lt;/span&gt; submenu&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;url&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;route&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token comment&#34;&gt;// 1. 给 route 的顶层菜单增加重定向功能 (但是只需要添加一次即可)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;!&lt;/span&gt;routes&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;find&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;item&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&gt;&lt;/span&gt; item&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;path &lt;span class=&#34;token operator&#34;&gt;===&lt;/span&gt; menu&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;url&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;          routes&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;push&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; path&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; menu&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;url&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; redirect&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; route&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;path &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token comment&#34;&gt;// 2. 将二级菜单对应的路径&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        routes&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;push&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;route&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token comment&#34;&gt;// 记录第一个被匹配到的菜单&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;!&lt;/span&gt;firstMenu &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; route&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; firstMenu &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; submenu&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; routes&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;最后遍历 &lt;code&gt;routes&lt;/code&gt;  将里面存储的需要注册的路由对象，动态注册就可以啦&lt;/p&gt;
-&lt;figure class=&#34;highlight typescript&#34;&gt;&lt;figcaption data-lang=&#34;typescript&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; routes &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;mapMenusToRoutes&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;userMenus&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;routes&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;forEach&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;route&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&gt;&lt;/span&gt; router&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;addRoute&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;main&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; route&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;注意事项&lt;br /&gt;
-这个动态注册路由的操作，应该是在进行登录操作，并且在登录成功跳转到 main 界面之前进行的。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;请思考，在登录操作里面跳转到主页面里面对路由做一个动态的注册真的就万事大吉了吗 🤔。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;问题：&lt;br /&gt;
-想象这样的一个场景，用户在登录之后进入了主界面，点击了它能看到的菜单，并进入了对应的界面，这时候用户点击了刷新会发生什么呢？答案很简单，我们在登录操作里面注册的动态路由没有了，因为用户刷新之后是不会再执行登陆操作的，也就是说刚才注册的路由不会再注册一遍，所以我们需要解决这个问题。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;解决方案：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;粗糙的解决方案:&lt;br /&gt;
- 在 &lt;code&gt;main.ts&lt;/code&gt;  里面再执行获取需要注册的路由对象，并遍历将其注册的操作，因为刷新的时候 &lt;code&gt;main.ts&lt;/code&gt;  会执行，但是我们是一般不希望 &lt;code&gt;main.ts&lt;/code&gt;  里面有过多的业务代码的。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;优雅的解决方案：&lt;br /&gt;
-将上面的操作封装成一个函数 &lt;code&gt;loadLocalCacheAction&lt;/code&gt;  放进 Pinia 的 loginStore 里的 &lt;code&gt;action&lt;/code&gt; , 然后在 &lt;code&gt;Store/index.ts&lt;/code&gt;  里面导出一个 &lt;code&gt;registerStore&lt;/code&gt;  函数，函数里面进行 &lt;code&gt;app.use(Pinia)&lt;/code&gt;  使用 pinia 插件操作和 &lt;code&gt;loadLocalCacheAction&lt;/code&gt;  操作，详细代码如下&lt;/p&gt;
-&lt;figure class=&#34;highlight typescript&#34;&gt;&lt;figcaption data-lang=&#34;typescript&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; createPinia &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;pinia&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; App &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;vue&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; useLoginStore &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;./login/login&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; pinia &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;createPinia&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;registerStore&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;app&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; App&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;Element&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token comment&#34;&gt;// 1.use 的 pinia&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  app&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;use&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;pinia&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token comment&#34;&gt;// 2. 加载本地的数据&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; loginStore &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;useLoginStore&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  loginStore&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;loadLocalCacheAction&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;default&lt;/span&gt; registerStore&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;最后在 &lt;code&gt;main.js&lt;/code&gt;  里面 &lt;code&gt;app.use(registerStore)&lt;/code&gt;  调用 registerStore 函数，完成对 pinia 插件的使用，并执行 &lt;code&gt;loadLocalCacheAction&lt;/code&gt;  函数，完成对动态路由的注册&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://zimu-66ccff.github.io/security/</guid>
-            <title>浏览器安全</title>
-            <link>https://zimu-66ccff.github.io/security/</link>
-            <category term="笔记" scheme="https://zimu-66ccff.github.io/categories/note/" />
-            <category term="前端" scheme="https://zimu-66ccff.github.io/categories/note/front-end/" />
-            <category term="浏览器原理" scheme="https://zimu-66ccff.github.io/categories/note/front-end/browser/" />
-            <category term="前端" scheme="https://zimu-66ccff.github.io/tags/%E5%89%8D%E7%AB%AF/" />
-            <category term="浏览器原理" scheme="https://zimu-66ccff.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8E%9F%E7%90%86/" />
-            <category term="浏览器安全" scheme="https://zimu-66ccff.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AE%89%E5%85%A8/" />
-            <pubDate>Sun, 19 Feb 2023 23:15:13 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;xss-攻击&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#xss-攻击&#34;&gt;#&lt;/a&gt; XSS 攻击&lt;/h1&gt;
-&lt;h3 id=&#34;概念&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概念&#34;&gt;#&lt;/a&gt; 概念&lt;/h3&gt;
-&lt;p&gt;XSS 指的是&lt;strong&gt;跨站脚本攻击&lt;/strong&gt;，是一种代码注入攻击，本质是网站没有对恶意脚本进行过滤，导致其和普通代码混在了一起，最终被浏览器执行。&lt;/p&gt;
-&lt;h3 id=&#34;可以进行的操作&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#可以进行的操作&#34;&gt;#&lt;/a&gt; 可以进行的操作&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;获取页面的数据，比如 DOM，cookie，localStorage，sessionStorage&lt;/li&gt;
-&lt;li&gt;DOS 攻击，向服务器发送大量的请求，占用服务器资源，导致用户无法访问服务器&lt;/li&gt;
-&lt;li&gt;破坏页面结构&lt;/li&gt;
-&lt;li&gt;流量劫持（将链接指向其他网站）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;xss-攻击类型&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#xss-攻击类型&#34;&gt;#&lt;/a&gt; XSS 攻击类型&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;存储型 XSS 攻击&lt;br /&gt;
-指的是恶意脚本会存储在服务器上，等到浏览器请求数据的时候，恶意脚本会返回，并执行。&lt;/li&gt;
-&lt;li&gt;反射型 XSS 攻击&lt;br /&gt;
-指的是诱导用户访问一个带有恶意代码的 url 后，服务器接收到数据后，把带有恶意代码的数据返回给浏览器，浏览器解析带有恶意脚本的数据，当作脚本执行，进行 XSS 攻击&lt;/li&gt;
-&lt;li&gt;DOM 型 XSS 攻击&lt;br /&gt;
-指的是直接通过操作 DOM 节点进行 XSS 攻击&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;如何防御-xss-攻击&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#如何防御-xss-攻击&#34;&gt;#&lt;/a&gt; 如何防御 XSS 攻击&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;前端程序员永远不要相信用户提交的数据，在进行拼凑 HTML 的时候，应该对字符串进行必要的转义，要考虑到拿来拼串的字符串可能带有恶意脚本。&lt;/li&gt;
-&lt;li&gt;使用 CSP，CSP 的本质是建立一个白名单，这个白名单可以告诉浏览器哪些外部资源可以加载和执行，避免恶意代码的注入攻击。&lt;/li&gt;
-&lt;li&gt;对敏感信息进行保护，比如对 cookie 使用 &lt;code&gt;http-only&lt;/code&gt; ，使得脚本无法获取，或者使用验证码，避免脚本伪装成用户。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;csrf-攻击&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#csrf-攻击&#34;&gt;#&lt;/a&gt; CSRF 攻击&lt;/h1&gt;
-&lt;h3 id=&#34;概念-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概念-2&#34;&gt;#&lt;/a&gt; 概念&lt;/h3&gt;
-&lt;p&gt;CSRF 攻击是一种跨站伪造请求攻击，攻击者诱导用户进入一个第三方网站，然后这个第三方网站就会向被攻击网站发送跨站请求，如果用户保持了登录状态，那么攻击者就会利用这个登录状态，冒充用户执行一些操作。&lt;br /&gt;
-其本质是利用 cookie 会在同源请求中携带发送给服务器，以此来实现用户的冒充。&lt;/p&gt;
-&lt;h3 id=&#34;常见的攻击类型&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#常见的攻击类型&#34;&gt;#&lt;/a&gt; 常见的攻击类型&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;GET 类型的 CSRF 攻击，比如在 img 标签里面构造一个请求，当用户打开这个网站的时候，就会发送请求。&lt;/li&gt;
-&lt;li&gt;POST 类型的 CSRF 攻击，比如构建一个表单，然后隐藏他，当用户进入页面的时候自动提交表单&lt;/li&gt;
-&lt;li&gt;链接类型的 CSRF 攻击，构造一个 a 标签，然后用户点击的时候触发攻击。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;怎么防止-csrf-攻击&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#怎么防止-csrf-攻击&#34;&gt;#&lt;/a&gt; 怎么防止 CSRF 攻击&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;同源检测&lt;br /&gt;
-服务器更具请求头中的 origin 和 referer 来判断请求是否来自允许访问的站点，但是 referer 可以仿造，并且会把搜索引擎的链接也给屏蔽了&lt;/li&gt;
-&lt;li&gt;利用 token 进行验证&lt;br /&gt;
-服务器向用户返回一个 token，然后用户每次请求的时候都要带 token，服务器再对这个 token 进行验证，缺点是给每个请求都加上 token 比较繁琐，并且如果请求经过负载均衡转移到了其他服务器，然后其他服务器的 session 中没有存储 token，就无法验证。&lt;/li&gt;
-&lt;li&gt;利用 cookie 进行双重验证&lt;br /&gt;
-用户在访问页面的时候，服务器向其域名添加一个 cookie，然后用户再次向服务器发送请求的时候，将这个 cookie 添加到 url 的参数中，服务器根据 cookie 中的数据和参数中的数据进行对比来验证。&lt;/li&gt;
-&lt;li&gt;在设置 cookie 属性的时候设置 Samesite，限制 cookie 不能被第三方使用。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;中间人攻击&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#中间人攻击&#34;&gt;#&lt;/a&gt; 中间人攻击&lt;/h1&gt;
-&lt;h3 id=&#34;概念-3&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概念-3&#34;&gt;#&lt;/a&gt; 概念&lt;/h3&gt;
-&lt;p&gt;中间人攻击是指攻击者分别与通信的两端建立联系，交换其所收到的数据，让通信的两端认为他们正在通过一个私密的链接直接与对方对话，攻击者可以拦截双非的对话，并插入新的内容。&lt;/p&gt;
-&lt;h3 id=&#34;攻击过程&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#攻击过程&#34;&gt;#&lt;/a&gt; 攻击过程&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;客户端发送请求到服务端，请求被中间人截获&lt;/li&gt;
-&lt;li&gt;服务端向客户端返回公钥&lt;/li&gt;
-&lt;li&gt;公钥被中间人截获，并生成一个伪造的公钥返回给客户端&lt;/li&gt;
-&lt;li&gt;客户端收到伪造的公钥后，用伪造的公钥生成加密 hash 值发给服务器。&lt;/li&gt;
-&lt;li&gt;中间人用自己的私钥解密获取真密钥，然后同时生成一个伪造的 hash 值发给服务器&lt;/li&gt;
-&lt;li&gt;服务器用私钥解密获取假密钥，然后加密数据返回给客户端。&lt;/li&gt;
-&lt;/ul&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://zimu-66ccff.github.io/httpVersionDifference/</guid>
-            <title>浅谈http协议各版本之间，http协议与https协议之间的区别</title>
-            <link>https://zimu-66ccff.github.io/httpVersionDifference/</link>
-            <category term="笔记" scheme="https://zimu-66ccff.github.io/categories/note/" />
-            <category term="前端" scheme="https://zimu-66ccff.github.io/categories/note/front-end/" />
-            <category term="计算机网络" scheme="https://zimu-66ccff.github.io/categories/note/front-end/computerNetwork/" />
-            <category term="前端" scheme="https://zimu-66ccff.github.io/tags/%E5%89%8D%E7%AB%AF/" />
-            <category term="计算机网络" scheme="https://zimu-66ccff.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" />
-            <category term="http1.0" scheme="https://zimu-66ccff.github.io/tags/http1-0/" />
-            <category term="http1.1" scheme="https://zimu-66ccff.github.io/tags/http1-1/" />
-            <category term="http2.0" scheme="https://zimu-66ccff.github.io/tags/http2-0/" />
-            <category term="http3.0" scheme="https://zimu-66ccff.github.io/tags/http3-0/" />
-            <category term="https" scheme="https://zimu-66ccff.github.io/tags/https/" />
-            <pubDate>Sun, 19 Feb 2023 15:51:25 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;http11-与-http10-的区别&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#http11-与-http10-的区别&#34;&gt;#&lt;/a&gt; http1.1 与 http1.0 的区别&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;连接方面&lt;br /&gt;
- http1.0 不是持久连接，每次发送请求都需要建立一个连接；http1.1 是持久连接，多次请求服用一个 tcp 连接。&lt;/li&gt;
-&lt;li&gt;缓存方面&lt;br /&gt;
- http1.0 的缓存主要是使用请求头中的 If-Modified-Sine,Expires 作为缓存判断的标准。http1.1 则增加了 Etag, if-None-match,if-Match 等更多选项来控制缓存策略&lt;/li&gt;
-&lt;li&gt;资源请求方面&lt;br /&gt;
- http1.0 请求资源的时候，有时候只是需要请求一点东西，但是服务器会把整个对象返回，存在浪费带宽的现象，并且不支持断点续传。http1.1 则在请求同中增加了 range 选项，支持只请求资源的某个部分，返回 206 状态码&lt;/li&gt;
-&lt;li&gt;新增了 host 字段，来指定服务器的域名&lt;/li&gt;
-&lt;li&gt;新增了 PUT,DELETE,TRACE,OPTIONS 请求方法&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;http20-与-http11-的区别&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#http20-与-http11-的区别&#34;&gt;#&lt;/a&gt; http2.0 与 http1.1 的区别&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;二进制协议&lt;br /&gt;
- http1.1 里头信息必须是文本，数据体可以是文本可以是二进制。而 http2.0 则是个完全的二进制协议，头信息和数据体都必须是二进制，统称为 &#39; 帧&#39;，分为头信息帧和数据帧。&lt;/li&gt;
-&lt;li&gt;多路复用&lt;br /&gt;
- http2.0 实现了多路复用，http2.0 依旧复用 tcp 连接，但是客户端和服务端都可以同时发送多个请求 or 响应，而且不用按照顺序一一发送，避免了 http 的队头阻塞。&lt;/li&gt;
-&lt;li&gt;数据流&lt;br /&gt;
- http2.0 使用了数据流的概念，因为 http2.0 的数据包不是按照顺序发送的，多个连续的数据包可能来自不同的请求 or 响应，所以需要指定他们来自哪个请求，哪个响应。http2.0 将请求 or 响应对应的所有数据包&lt;br /&gt;
-称为一个数据流，每个数据流都有一个独一无二的编号，每个数据包发送的时候都必须带上数据流 ip，来指明它属于哪个数据流。&lt;/li&gt;
-&lt;li&gt;头信息压缩&lt;br /&gt;
- http1.1 协议不带状态，每次请求都必须带上所有的信息，所以很多字段都是重复的，这会浪费带宽，也会影响速度&lt;/li&gt;
-&lt;li&gt;服务器推送&lt;br /&gt;
- http2.0 允许服务器未经请求，主动的向客户端发送一些静态资源。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;https-和-http-的区别&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#https-和-http-的区别&#34;&gt;#&lt;/a&gt; https 和 http 的区别&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;https 协议需要 CA 证书，费用较高，而 http 协议不需要&lt;/li&gt;
-&lt;li&gt;http 协议是超文本传输协议，信息是明文传输的，https 是 ssl 加密传输协议，具有安全性&lt;/li&gt;
-&lt;li&gt;使用不同的传输方式，端口号也不同，http 协议是运行在 80 端口 ，https 协议是运行在 443 端口&lt;/li&gt;
-&lt;li&gt;http 协议很简单是无状态的，https 协议是用 ssl 协议和 http 协议构建的可加密传输，身份认证的网络协议，比 http 更安全。&lt;/li&gt;
 &lt;/ul&gt;
  ]]></description>
         </item>
